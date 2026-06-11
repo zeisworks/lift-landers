@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Personal Trainer St. Louis | Lift STL — Free Day Pass &amp; Tour</title>
-<meta name="description" content="One-on-one personal training in St. Louis at Lift's private Brentwood gym. Custom programming, regular body-fat testing, 24/7 access. Start with a free day pass and tour — call (314) 296-3117.">
+<meta name="description" content="One-on-one personal training in St. Louis from the coach behind MLB players, NFL linemen and Navy SEALs — at a private Brentwood gym with published pricing and 24/7 access. Start with a free day pass and tour. (314) 296-3117.">
 <!-- Paid-traffic landing page. Uncomment to keep it out of organic search and avoid duplicating lift-stl.com/personal-training: -->
 <!-- <meta name="robots" content="noindex, nofollow"> -->
 
@@ -82,12 +82,12 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-/* Type scale mirrors the site theme (96/64/48/40/32/24, 1.4em),
+/* Type scale mirrors the site theme (96/64/48/40/32/24),
    clamped for small screens. Headings are set in caps like the
    live site; the .accent word is lowercase Rift Bold Italic. */
-h1,h2,h3{font-family:var(--heading);font-weight:normal;text-transform:uppercase;line-height:1.15;margin:0 0 .35em}
-h1{font-size:clamp(44px,7.2vw,96px)}
-h2{font-size:clamp(34px,5vw,64px)}
+h1,h2,h3{font-family:var(--heading);font-weight:normal;text-transform:uppercase;line-height:1.12;margin:0 0 .35em}
+h1{font-size:clamp(46px,7.2vw,96px)}
+h2{font-size:clamp(36px,5vw,64px)}
 h3{font-size:clamp(24px,3vw,32px)}
 .accent{font-family:var(--heading-italic);text-transform:lowercase;color:var(--red)}
 p{margin:0 0 1em}
@@ -115,39 +115,69 @@ img{max-width:100%;display:block}
 .btn-solid{background:var(--red);color:var(--cream)}
 .btn-solid:hover{background:var(--charcoal);border-color:var(--charcoal);color:var(--cream)}
 .btn-block{display:block;width:100%}
+.btn-sm{padding:10px 24px;font-size:14px}
 
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-section{padding:72px 0}
+section{padding:84px 0;position:relative;overflow:hidden}
+
+/* Oversized Rift watermark behind section headings — pure brand
+   ink (charcoal/cream at low alpha), set via data-watermark. */
+.wm::before{
+  content:attr(data-watermark);
+  position:absolute;top:6px;left:50%;transform:translateX(-50%);
+  font-family:var(--heading);text-transform:uppercase;white-space:nowrap;
+  font-size:clamp(110px,18vw,240px);line-height:1;
+  color:rgba(46,48,54,.05);
+  pointer-events:none;user-select:none;
+}
+.dark.wm::before{color:rgba(243,241,236,.045)}
+
+.kicker{font:normal 14px/1.4 var(--heavy);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
+.center{text-align:center}
+
+/* Scroll-reveal (disabled entirely under prefers-reduced-motion
+   and when JS doesn't run). */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
 
 /* ---------- header ---------- */
 header.site{
   background:var(--cream);
   border-bottom:1px solid rgba(46,48,54,.08);
+  position:sticky;top:0;z-index:40;
 }
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo svg{width:54px;height:54px}
+.logo svg{width:50px;height:50px}
 .logo span{font-family:var(--heading);font-size:26px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.header-right{display:flex;align-items:center;gap:22px}
+.header-call{font-family:var(--heavy);font-size:15px;text-decoration:none;white-space:nowrap}
+.header-call strong{color:var(--red)}
+@media (max-width:760px){
+  header.site{position:static}
+  .header-right .btn{display:none}
+}
 @media (max-width:480px){
-  .logo svg{width:44px;height:44px}
+  .logo svg{width:42px;height:42px}
   .logo span{font-size:20px}
   .header-call{font-size:13px}
   .header-call .header-loc{display:none}
 }
-.header-call{font-family:var(--heavy);font-size:15px;text-decoration:none;white-space:nowrap}
-.header-call strong{color:var(--red)}
 
 /* ---------- hero ---------- */
 .hero{
   background:var(--charcoal) url('https://static.wixstatic.com/media/47b482_1ee9cd80ddcc4316b76ded73a305b9c5f000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/gym.jpg') center/cover no-repeat;
   background-blend-mode:multiply;
-  background-color:rgba(46,48,54,.92);
+  background-color:rgba(46,48,54,.93);
   color:var(--cream);
-  padding:64px 0 80px;
+  padding:64px 0 84px;
+  overflow:visible;
 }
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,1fr);gap:56px;align-items:center}
-.hero p.sub{font-size:18px;max-width:34em;color:var(--cream)}
-.hero ul.ticks{list-style:none;margin:24px 0 0;padding:0;font-family:var(--heavy);font-size:15px}
+.hero .kicker{color:var(--red)}
+.hero p.sub{font-size:18px;max-width:32em;color:var(--cream)}
+.hero p.sub b{font-family:var(--heavy);font-weight:normal}
+.hero ul.ticks{list-style:none;margin:26px 0 0;padding:0;font-family:var(--heavy);font-size:15px}
 .hero ul.ticks li{padding:6px 0 6px 32px;position:relative}
 .hero ul.ticks li::before{
   content:"";position:absolute;left:0;top:9px;width:18px;height:18px;
@@ -163,7 +193,7 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
   border-top:6px solid var(--red);
   box-shadow:0 18px 50px rgba(0,0,0,.35);
 }
-.lead-card h2{font-size:clamp(28px,2.6vw,38px);line-height:1.15}
+.lead-card h2{font-size:clamp(28px,2.6vw,38px);line-height:1.12}
 .lead-card p.fine{font-size:14px;color:var(--gray-mid);margin-bottom:20px}
 .field{margin-bottom:16px}
 .field label{display:block;font:normal 13px/1.4 var(--heavy);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
@@ -177,6 +207,9 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
   padding:13px 14px;
 }
 .field input:focus-visible{outline-offset:0}
+.next-steps{list-style:none;margin:18px 0 0;padding:14px 0 0;border-top:1px solid rgba(46,48,54,.1);font-size:13px;color:var(--gray-mid);display:flex;gap:6px;justify-content:space-between;text-align:center}
+.next-steps li{flex:1}
+.next-steps b{display:block;font-family:var(--heavy);font-weight:normal;color:var(--charcoal);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
 .form-note{font-size:13px;color:var(--gray-mid);margin:14px 0 0;text-align:center}
 .form-success{
   display:none;
@@ -188,31 +221,61 @@ form.is-done .form-fields{display:none}
 form.is-done .form-success{display:block}
 .form-error{display:none;color:var(--red-deep);font-size:14px;margin-top:10px;text-align:center}
 
-/* ---------- trust strip ---------- */
-.strip{background:var(--red);color:var(--cream);padding:20px 0}
-.strip .wrap{display:flex;flex-wrap:wrap;gap:10px 40px;justify-content:center;font-family:var(--heavy);font-size:15px;text-align:center}
+/* ---------- credibility strip ---------- */
+.strip{background:var(--red);color:var(--cream);padding:22px 0}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;align-items:baseline;text-align:center}
+.strip .strip-label{font:normal 13px/1.4 var(--heavy);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.strip .strip-names{font-family:var(--heading);font-size:clamp(20px,2.4vw,28px);text-transform:uppercase;letter-spacing:.03em}
+
+/* ---------- stats band ---------- */
+.stats{background:var(--charcoal);color:var(--cream);padding:54px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center}
+.stat b{display:block;font-family:var(--heading);font-weight:normal;font-size:clamp(40px,4.6vw,64px);line-height:1;color:var(--red)}
+.stat span{font:normal 13px/1.5 var(--heavy);letter-spacing:.08em;text-transform:uppercase;color:var(--gray);display:block;margin-top:8px}
+@media (max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr;gap:34px 16px}}
 
 /* ---------- how it works ---------- */
 .steps{counter-reset:step}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:42px}
 .step{background:var(--paper);padding:32px 28px;border-top:4px solid var(--charcoal)}
 .step.free{border-top-color:var(--red)}
 .step::before{
   counter-increment:step;content:counter(step,decimal-leading-zero);
-  display:block;font-family:var(--heading);font-size:40px;color:var(--red);line-height:1;margin-bottom:12px;
+  display:block;font-family:var(--heading);font-size:44px;color:var(--red);line-height:1;margin-bottom:12px;
 }
 .step h3{font-size:24px}
 .step .price-tag{font-family:var(--heavy);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-mid);display:block;margin-bottom:10px}
 .step .price-tag b{color:var(--red)}
 
-/* ---------- explainer video ---------- */
-.explainer{margin:48px auto 0;max-width:860px}
+/* ---------- explainer video + evaluation anatomy ---------- */
+.explainer{margin:56px auto 0;max-width:880px}
 .explainer video{width:100%;height:auto;display:block;background:var(--charcoal);border-top:6px solid var(--red)}
 .explainer figcaption{font:normal 13px/1.5 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--gray-mid);text-align:center;padding:12px 0 0}
+.eval-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(46,48,54,.12);max-width:880px;margin:34px auto 0}
+.eval-grid div{background:var(--cream);padding:20px 18px}
+.eval-grid b{font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:6px}
+.eval-grid b i{font-family:var(--heading);font-style:normal;color:var(--red);margin-right:6px}
+.eval-grid span{font-size:13.5px;color:var(--gray-mid);line-height:1.5;display:block}
+@media (max-width:860px){.eval-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.eval-grid{grid-template-columns:1fr}}
+
+/* ---------- comparison table ---------- */
+.compare-wrap{overflow-x:auto;margin-top:42px}
+.compare{width:100%;border-collapse:collapse;background:var(--paper);min-width:640px}
+.compare th,.compare td{padding:18px 20px;border-bottom:1px solid rgba(46,48,54,.1);text-align:left;font-size:15px;vertical-align:top}
+.compare thead th{font:normal 13px/1.4 var(--heavy);letter-spacing:.08em;text-transform:uppercase}
+.compare thead th.col-lift{background:var(--charcoal);color:var(--cream)}
+.compare thead th.col-lift .accent{font-size:18px}
+.compare thead th.col-box{background:rgba(46,48,54,.07);color:var(--gray-mid)}
+.compare tbody th{font:normal 13px/1.5 var(--heavy);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-mid);width:22%}
+.compare td.col-lift{font-family:var(--heavy);background:rgba(225,71,71,.05)}
+.compare td.col-lift::before{content:"";display:inline-block;width:14px;height:14px;margin-right:10px;background:var(--red);clip-path:polygon(38% 100%,0 62%,14% 48%,38% 72%,86% 10%,100% 24%)}
+.compare td.col-box{color:var(--gray-mid)}
+.compare-note{font-size:13px;color:var(--gray-mid);margin-top:14px}
 
 /* ---------- features (dark) ---------- */
 .dark{background:var(--charcoal);color:var(--cream)}
-.dark .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.dark .wrap.cols{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .feat-list{list-style:none;margin:28px 0 0;padding:0}
 .feat-list li{padding:14px 0 14px 36px;position:relative;border-bottom:1px solid rgba(243,241,236,.12)}
 .feat-list li::before{
@@ -228,26 +291,48 @@ form.is-done .form-success{display:block}
 /* ---------- pricing ---------- */
 .pricing table{width:100%;border-collapse:collapse;margin-top:32px;background:var(--paper)}
 .pricing th,.pricing td{padding:16px 18px;text-align:left;border-bottom:1px solid rgba(46,48,54,.12);font-size:15px}
-.pricing th{font:normal 13px/1.4 var(--heavy);letter-spacing:.06em;text-transform:uppercase;background:var(--charcoal);color:var(--cream)}
+.pricing thead th{font:normal 13px/1.4 var(--heavy);letter-spacing:.06em;text-transform:uppercase;background:var(--charcoal);color:var(--cream)}
 .pricing td.price{font-family:var(--heavy);color:var(--red);white-space:nowrap}
-.pricing .table-note{font-size:14px;color:var(--gray-mid);margin-top:14px}
 .eval-callout{background:var(--paper);border-left:4px solid var(--red);padding:22px 26px;margin-top:36px;font-size:15px}
 .eval-callout b{font-family:var(--heavy);font-weight:normal}
 
 /* ---------- proof ---------- */
-.coach{display:grid;grid-template-columns:minmax(260px,.9fr) 1.5fr;gap:48px;align-items:center;margin-bottom:56px}
+.coach{display:grid;grid-template-columns:minmax(260px,.9fr) 1.5fr;gap:48px;align-items:center;margin-bottom:60px}
 .coach img{width:100%;object-fit:cover}
-.coach .kicker{font:normal 14px/1.4 var(--heavy);letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
-.quotes{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:48px 0}
+.coach-creds{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.coach-creds li{font:normal 12.5px/1.3 var(--heavy);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--red);color:var(--cream);border-radius:999px;padding:7px 16px}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:52px 0}
 blockquote{
-  margin:0;background:var(--paper);padding:30px 28px;border-top:4px solid var(--red);
-  font-size:16px;
+  margin:0;background:var(--paper);color:var(--charcoal);padding:34px 30px 28px;border-top:4px solid var(--red);
+  font-size:16px;position:relative;
 }
+blockquote::before{
+  content:"\201C";font-family:var(--heading);font-size:88px;line-height:0;
+  color:var(--red);position:absolute;top:36px;left:24px;opacity:.25;
+}
+blockquote p{position:relative}
 blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--gray-mid)}
 .ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
-.ba-grid figure{margin:0;background:var(--paper)}
+.ba-grid figure{margin:0;background:var(--paper);color:var(--charcoal)}
 .ba-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .ba-grid figcaption{font:normal 13px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;padding:12px 14px}
+@media (max-width:980px){.ba-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.ba-grid{grid-template-columns:1fr 1fr;gap:10px}}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:820px;margin:42px auto 0}
+.faq details{background:var(--paper);border-bottom:1px solid rgba(46,48,54,.12)}
+.faq details:first-of-type{border-top:4px solid var(--charcoal)}
+.faq summary{
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px;
+  font:normal 15px/1.45 var(--heavy);letter-spacing:.03em;text-transform:uppercase;
+  padding:20px 24px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--heading);font-size:28px;color:var(--red);line-height:1;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq .faq-a{padding:0 24px 22px;font-size:15px;color:var(--gray-mid)}
+.faq .faq-a a{color:var(--red)}
 
 /* ---------- visit / hours ---------- */
 .visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
@@ -283,23 +368,21 @@ footer.site a{color:var(--cream);text-decoration:none}
 }
 
 /* ---------- responsive ---------- */
+#bottom-form{scroll-margin-top:90px}
 @media (max-width:980px){
-  .hero .wrap,.dark .wrap,.visit .wrap{grid-template-columns:1fr}
+  .hero .wrap,.dark .wrap.cols,.visit .wrap{grid-template-columns:1fr}
   .steps-grid{grid-template-columns:1fr}
   .quotes{grid-template-columns:1fr}
-  .ba-grid{grid-template-columns:repeat(2,1fr)}
   .coach{grid-template-columns:1fr;gap:28px}
-  section{padding:56px 0}
+  section{padding:60px 0}
   .hero{padding:40px 0 56px}
-}
-@media (max-width:480px){
-  .ba-grid{grid-template-columns:1fr 1fr;gap:10px}
-  .lead-card{padding:28px 20px}
+  .stats .wrap{grid-template-columns:1fr 1fr}
 }
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .reveal{opacity:1;transform:none}
 }
 </style>
 
@@ -344,7 +427,10 @@ footer.site a{color:var(--cream);text-decoration:none}
       </svg>
       <span>Lift STL</span>
     </a>
-    <a class="header-call" href="tel:+13142963117"><span class="header-loc">Brentwood, MO &nbsp;·&nbsp; </span><strong>(314) 296-3117</strong></a>
+    <div class="header-right">
+      <a class="header-call" href="tel:+13142963117"><span class="header-loc">Brentwood, MO &nbsp;·&nbsp; </span><strong>(314) 296-3117</strong></a>
+      <a class="btn btn-solid btn-sm" href="#bottom-form" data-cta>Free Day Pass</a>
+    </div>
   </div>
 </header>
 
@@ -354,12 +440,13 @@ footer.site a{color:var(--cream);text-decoration:none}
   <section class="hero">
     <div class="wrap">
       <div>
+        <p class="kicker">Private personal training gym · Brentwood, MO</p>
         <h1>St.&nbsp;Louis personal training that gets <span class="accent">results.</span></h1>
-        <p class="sub">One-on-one coaching at our private Brentwood gym — a custom plan built around your body, regular progress testing, and a trainer who actually answers your texts.</p>
+        <p class="sub">Train one-on-one with the coach who's spent a decade preparing <b>MLB players, NFL linemen, and Navy SEALs</b> — in a private gym, on a plan built from your evaluation, at prices published right on this page.</p>
         <ul class="ticks">
           <li>Custom programming &amp; regular evaluations</li>
           <li>Bi-weekly body-fat testing</li>
-          <li>Top-tier equipment, never crowded</li>
+          <li>Pricing published below — no sales appointment</li>
           <li>24/7 keycard access for members</li>
         </ul>
       </div>
@@ -383,6 +470,11 @@ footer.site a{color:var(--cream);text-decoration:none}
             </div>
             <button class="btn btn-dark btn-block" type="submit">Get My Free Day Pass &amp; Tour</button>
             <p class="form-error" role="alert"></p>
+            <ol class="next-steps" aria-label="What happens next">
+              <li><b>1. We text you</b>to say hi</li>
+              <li><b>2. Pick a time</b>that fits your day</li>
+              <li><b>3. Come train</b>on us — free</li>
+            </ol>
             <p class="form-note">Prefer to talk? Call <a href="tel:+13142963117">(314) 296-3117</a></p>
           </div>
           <div class="form-success" role="status">
@@ -394,76 +486,149 @@ footer.site a{color:var(--cream);text-decoration:none}
     </div>
   </section>
 
+  <!-- ============ CREDIBILITY STRIP ============ -->
   <div class="strip">
     <div class="wrap">
-      <span>Private gym in Brentwood — off S. Hanley Rd &amp; Hwy 64</span>
-      <span>Staffed 7 days a week</span>
-      <span>Members get 24/7 keycard access</span>
+      <span class="strip-label">A decade of coaching:</span>
+      <span class="strip-names">MLB &amp; MiLB players&ensp;·&ensp;Navy SEALs&ensp;·&ensp;NFL lineman Jake Long&ensp;·&ensp;and people on Day&nbsp;#1</span>
     </div>
   </div>
 
   <!-- ============ HOW IT WORKS ============ -->
-  <section class="steps">
+  <section class="steps wm" data-watermark="The Plan">
     <div class="wrap">
-      <h2>How it <span class="accent">works.</span></h2>
-      <p style="max-width:42em">No surprises and no pressure — here's exactly what the first month looks like, including what it costs.</p>
+      <p class="kicker reveal">No surprises, no pressure</p>
+      <h2 class="reveal">How it <span class="accent">works.</span></h2>
+      <p class="reveal" style="max-width:42em">The big clubs make you sit through a sales appointment to learn what anything costs. Here's our entire process — including every price — before you ever walk in.</p>
       <div class="steps-grid">
-        <div class="step free">
+        <div class="step free reveal">
           <span class="price-tag"><b>Free</b> · day passes normally $25</span>
           <h3>Tour + Day Pass</h3>
           <p>Come see the facility, meet the team, and train for a day on us. If it's not the right fit, no hard feelings.</p>
         </div>
-        <div class="step">
+        <div class="step reveal">
           <span class="price-tag"><b>$100</b> · one-time</span>
           <h3>Custom Evaluation</h3>
           <p>We start with a custom evaluation of you — goals, movement, body composition — and build your personal plan from it.</p>
         </div>
-        <div class="step">
+        <div class="step reveal">
           <span class="price-tag"><b>From $85</b> / session</span>
           <h3>Train With Your Plan</h3>
           <p>One-on-one sessions with your trainer, regular re-evaluations, and bi-weekly body-fat testing to prove it's working.</p>
         </div>
       </div>
+
       <!-- The site's own produced explainer (the video behind the current
            PT page hero). preload="none" — nothing downloads until play. -->
-      <figure class="explainer">
+      <figure class="explainer reveal">
         <video controls preload="none" playsinline width="1280" height="720"
           poster="https://static.wixstatic.com/media/47b482_1ee9cd80ddcc4316b76ded73a305b9c5f000.jpg/v1/fill/w_1200,h_675,al_c,q_80/evaluation-video-poster.jpg">
           <source src="https://video.wixstatic.com/video/47b482_1ee9cd80ddcc4316b76ded73a305b9c5/720p/mp4/file.mp4" type="video/mp4">
         </video>
         <figcaption>Watch: how we find the best fitness plan for your goals (60 sec)</figcaption>
       </figure>
-      <p style="text-align:center;margin-top:40px">
+      <div class="eval-grid reveal" aria-label="What the evaluation covers">
+        <div><b><i>A</i>History &amp; goals</b><span>Where you've been, where you actually want to go — it frames everything else.</span></div>
+        <div><b><i>B</i>Movement screen</b><span>How you move under load, and the imbalances worth fixing first.</span></div>
+        <div><b><i>C</i>Body composition</b><span>A real baseline, re-tested bi-weekly so progress is measured, not guessed.</span></div>
+        <div><b><i>D</i>Your plan</b><span>Programming built from your data — and rebuilt as your numbers move.</span></div>
+      </div>
+      <p class="center" style="margin-top:44px">
         <a class="btn btn-dark" href="#bottom-form" data-cta>Get My Free Day Pass &amp; Tour</a>
       </p>
     </div>
   </section>
 
-  <!-- ============ WHAT YOU GET (dark) ============ -->
-  <section class="dark">
+  <!-- ============ STATS BAND ============ -->
+  <div class="stats">
     <div class="wrap">
+      <div class="stat reveal"><b>10+</b><span>Years coaching pro athletes</span></div>
+      <div class="stat reveal"><b>24/7</b><span>Keycard access for members</span></div>
+      <div class="stat reveal"><b>$0</b><span>Your first day — free pass &amp; tour</span></div>
+      <div class="stat reveal"><b>100%</b><span>Of our pricing published here</span></div>
+    </div>
+  </div>
+
+  <!-- ============ COMPARISON ============ -->
+  <section class="wm" data-watermark="Compare">
+    <div class="wrap">
+      <p class="kicker reveal">Lift vs. the big-box clubs</p>
+      <h2 class="reveal">Where the luxury clubs <span class="accent">lose.</span></h2>
+      <p class="reveal" style="max-width:44em">The big chains sell a beautiful lobby. We sell a coach, a plan, and a number on a scale that keeps moving. Here's the difference, line by line.</p>
+      <div class="compare-wrap reveal">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col" style="background:transparent"></th>
+              <th scope="col" class="col-lift"><span class="accent">Lift</span> STL</th>
+              <th scope="col" class="col-box">Typical big-box club</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Training rates</th>
+              <td class="col-lift">Published on this page</td>
+              <td class="col-box">Quoted after a sales appointment</td>
+            </tr>
+            <tr>
+              <th scope="row">Gym membership</th>
+              <td class="col-lift">Included with every session pack</td>
+              <td class="col-box">Separate monthly dues, on top of training</td>
+            </tr>
+            <tr>
+              <th scope="row">Your coach</th>
+              <td class="col-lift">The founder — a decade training pro athletes</td>
+              <td class="col-box">Assigned from whoever's on staff</td>
+            </tr>
+            <tr>
+              <th scope="row">The floor</th>
+              <td class="col-lift">A private gym in Brentwood</td>
+              <td class="col-box">Shared with the whole club</td>
+            </tr>
+            <tr>
+              <th scope="row">Access</th>
+              <td class="col-lift">24/7 keycard, every day of the year</td>
+              <td class="col-box">Club hours</td>
+            </tr>
+            <tr>
+              <th scope="row">Commitment</th>
+              <td class="col-lift">Month-to-month memberships, no contracts</td>
+              <td class="col-box">Often annual agreements + initiation fees</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-note reveal">"Typical big-box club" describes common practices at large chain health clubs; specifics vary by club and location.</p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT YOU GET (dark) ============ -->
+  <section class="dark wm" data-watermark="Focus">
+    <div class="wrap cols">
       <div>
-        <h2>Training with the right <span class="accent">focus.</span></h2>
+        <p class="kicker reveal">Everything the luxury clubs promise — without the maze</p>
+        <h2 class="reveal">Training with the right <span class="accent">focus.</span></h2>
         <ul class="feat-list">
-          <li><b>World-class trainers</b><span>Coaching from trainers who've worked with pro athletes — and beginners on Day #1.</span></li>
-          <li><b>Custom programming</b><span>A plan built from your evaluation, not a template — updated as you progress.</span></li>
-          <li><b>Regular body-fat testing</b><span>Bi-weekly measurements so progress is tracked, not guessed.</span></li>
-          <li><b>Text &amp; email communication</b><span>Questions between sessions answered in under 24 hours.</span></li>
-          <li><b>Top-tier equipment</b><span>A private, fully equipped gym — no waiting on racks.</span></li>
+          <li class="reveal"><b>World-class trainers</b><span>Coaching from trainers who've worked with pro athletes — and beginners on Day #1.</span></li>
+          <li class="reveal"><b>Custom programming</b><span>A plan built from your evaluation, not a template — updated as you progress.</span></li>
+          <li class="reveal"><b>Regular body-fat testing</b><span>Bi-weekly measurements so progress is tracked, not guessed.</span></li>
+          <li class="reveal"><b>Text &amp; email communication</b><span>Questions between sessions answered in under 24 hours.</span></li>
+          <li class="reveal"><b>Top-tier equipment</b><span>A private, fully equipped gym — no waiting on racks.</span></li>
         </ul>
       </div>
-      <figure>
+      <figure class="reveal">
         <img src="https://static.wixstatic.com/media/9fd553_a2dc7c20eb7e43b3b497b61afab38850~mv2.jpg/v1/fill/w_900,h_1100,al_c,q_80/lift-training.jpg" alt="Lift member back-squatting with a coach on the red turf at the Brentwood gym" loading="lazy" width="900" height="1100">
       </figure>
     </div>
   </section>
 
   <!-- ============ PRICING ============ -->
-  <section class="pricing">
+  <section class="pricing wm" data-watermark="Pricing">
     <div class="wrap">
-      <h2>Straightforward <span class="accent">pricing.</span></h2>
-      <p style="max-width:42em">No hidden rates after you click. Every package includes one-on-one sessions with your trainer, and session packs include gym membership for the lengths shown.</p>
-      <table>
+      <p class="kicker reveal">The part the other guys hide</p>
+      <h2 class="reveal">Straightforward <span class="accent">pricing.</span></h2>
+      <p class="reveal" style="max-width:44em">Most premium clubs won't tell you what training costs until you've bought a membership and sat through a pitch. Here is every number, before you've given us anything but a scroll. Session packs include gym membership for the lengths shown.</p>
+      <table class="reveal">
         <thead>
           <tr><th scope="col">Package</th><th scope="col">Per session</th><th scope="col">Includes membership</th></tr>
         </thead>
@@ -475,55 +640,61 @@ footer.site a{color:var(--cream);text-decoration:none}
           <tr><td>On/Off Campus (2 sessions / month + programming)</td><td class="price">$325 / month</td><td>Ongoing</td></tr>
         </tbody>
       </table>
-      <div class="eval-callout">
+      <div class="eval-callout reveal">
         <b>The honest first step:</b> every training plan starts with a one-time <b>$100 custom evaluation</b> — goals, movement screen, and body composition — so your program is built on real data. But start with the free tour and day pass first; the evaluation only makes sense once you've seen the place.
       </div>
-      <p style="text-align:center;margin-top:40px">
+      <p class="center" style="margin-top:40px">
         <a class="btn btn-dark" href="#bottom-form" data-cta>Get My Free Day Pass &amp; Tour</a>
       </p>
     </div>
   </section>
 
   <!-- ============ PROOF (dark) ============ -->
-  <section class="dark" style="display:block">
-    <div class="wrap" style="display:block">
+  <section class="dark wm" data-watermark="Proof">
+    <div class="wrap">
       <div class="coach">
-        <img src="https://static.wixstatic.com/media/47b482_16703b7b7f21486cac0680f696219abe~mv2.jpg/v1/fill/w_800,h_900,al_c,q_80/lift-gym.jpg" alt="Member training with a curl bar at Lift STL" loading="lazy" width="800" height="900">
+        <img class="reveal" src="https://static.wixstatic.com/media/47b482_16703b7b7f21486cac0680f696219abe~mv2.jpg/v1/fill/w_800,h_900,al_c,q_80/lift-gym.jpg" alt="Member training with a curl bar at Lift STL" loading="lazy" width="800" height="900">
         <div>
-          <p class="kicker">Your trainer</p>
-          <h2 style="font-size:clamp(30px,3.6vw,48px)">Eric Humes — Founder, <span class="accent">Lift&nbsp;STL</span></h2>
-          <p>A former three-sport athlete and collegiate baseball player, Eric has spent over a decade training major and minor league baseball players, Navy SEALs, high-school prospects, and NFL lineman Jake Long. He believes in investing the time up front to establish achievable goals — and sees himself as a teammate to his clients, not just a coach.</p>
+          <p class="kicker reveal">Your trainer</p>
+          <h2 class="reveal" style="font-size:clamp(30px,3.6vw,48px)">Eric Humes — Founder, <span class="accent">Lift&nbsp;STL</span></h2>
+          <p class="reveal">A former three-sport athlete and collegiate baseball player, Eric has spent over a decade training major and minor league baseball players, Navy SEALs, high-school prospects, and NFL lineman Jake Long. He believes in investing the time up front to establish achievable goals — and sees himself as a teammate to his clients, not just a coach.</p>
+          <ul class="coach-creds reveal" aria-label="Athletes Eric has trained">
+            <li>MLB &amp; MiLB players</li>
+            <li>Navy SEALs</li>
+            <li>NFL lineman Jake Long</li>
+            <li>HS prospects</li>
+          </ul>
         </div>
       </div>
 
       <div class="quotes">
-        <blockquote>
+        <blockquote class="reveal">
           <p>“What I like most about Eric is how specific he is with his approach. He customized a workout to help fix my imbalances which helped my performance.”</p>
           <footer>— Cole Miller, Lift member</footer>
         </blockquote>
-        <blockquote>
+        <blockquote class="reveal">
           <p>“Working with Lift was the driving force that led me to finally achieving my goals. My weight loss journey is going on 5 years now and it has been a rollercoaster of losing a little bit of weight and putting it back on… I was able to learn from some of the top fitness experts in my city on ways to lose weight quickly and keep the muscle on.”</p>
           <footer>— Ryan Finley, Lift member</footer>
         </blockquote>
       </div>
 
-      <h3 style="text-align:center">Every effort is <span class="accent">rewarded.</span></h3>
+      <h3 class="center reveal">Every effort is <span class="accent">rewarded.</span></h3>
       <!-- Real member transformations already published on lift-stl.com.
            To add more, duplicate a <figure> and swap the image + name. -->
       <div class="ba-grid">
-        <figure>
+        <figure class="reveal">
           <img src="https://static.wixstatic.com/media/48c380_ebc540868343429695e5716568bcec2f~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80/rhett.jpg" alt="Rhett Mueller before and after training at Lift STL" loading="lazy" width="600" height="450">
           <figcaption>Rhett Mueller</figcaption>
         </figure>
-        <figure>
+        <figure class="reveal">
           <img src="https://static.wixstatic.com/media/48c380_d98ca07f7496488d9b807ca378ef4ccf~mv2.png/v1/fill/w_600,h_450,al_c,q_80/seth.png" alt="Seth Buhman before and after training at Lift STL" loading="lazy" width="600" height="450">
           <figcaption>Seth Buhman</figcaption>
         </figure>
-        <figure>
+        <figure class="reveal">
           <img src="https://static.wixstatic.com/media/48c380_c93f19c535324760b09ad74270ff59c2~mv2.png/v1/fill/w_600,h_450,al_c,q_80/aakarsh.png" alt="Aakarsh before and after training at Lift STL" loading="lazy" width="600" height="450">
           <figcaption>Aakarsh</figcaption>
         </figure>
-        <figure>
+        <figure class="reveal">
           <img src="https://static.wixstatic.com/media/48c380_d2715d50fd6a49bab57008a23b47288d~mv2.png/v1/fill/w_600,h_450,al_c,q_80/eric12.png" alt="Eric's twelve-week before and after at Lift STL" loading="lazy" width="600" height="450">
           <figcaption>Eric — 12 weeks</figcaption>
         </figure>
@@ -531,12 +702,44 @@ footer.site a{color:var(--cream);text-decoration:none}
     </div>
   </section>
 
+  <!-- ============ FAQ ============ -->
+  <section class="wm" data-watermark="Answers">
+    <div class="wrap">
+      <h2 class="center reveal">Fair <span class="accent">questions.</span></h2>
+      <div class="faq reveal">
+        <details>
+          <summary>Do I have to be a member before I start training?</summary>
+          <div class="faq-a">No. Start with the free day pass and tour — and every training pack includes a gym membership (one to nine months depending on the pack), so you're never paying twice.</div>
+        </details>
+        <details>
+          <summary>Am I signing a contract?</summary>
+          <div class="faq-a">Gym memberships are month-to-month with no contracts. Training is prepaid in the pack you choose — when it's done, it's done, and you decide what's next.</div>
+        </details>
+        <details>
+          <summary>I've never really lifted. Is this place for me?</summary>
+          <div class="faq-a">Yes — that's exactly what the evaluation is for. New gyms are intimidating; we want you to know you belong here. Your plan starts where <em>you</em> are, and your coach is with you for every rep.</div>
+        </details>
+        <details>
+          <summary>When can I actually train?</summary>
+          <div class="faq-a">Staffed hours run seven days a week (Mon–Thu 6 AM–7 PM, Fri 6 AM–5 PM, Sat 6 AM–2 PM, Sun 8 AM–2 PM), and members get 24/7 keycard access — so your sessions fit your schedule, not ours.</div>
+        </details>
+        <details>
+          <summary>What does it cost, really?</summary>
+          <div class="faq-a">It's all published above: a one-time $100 evaluation, then $85–$100 per session depending on pack size — gym membership included. The day pass and tour are free. No initiation fee, no quote appointment.</div>
+        </details>
+      </div>
+      <p class="center" style="margin-top:40px">
+        <a class="btn btn-dark" href="#bottom-form" data-cta>Get My Free Day Pass &amp; Tour</a>
+      </p>
+    </div>
+  </section>
+
   <!-- ============ VISIT ============ -->
   <section class="visit dark" style="border-top:1px solid rgba(243,241,236,.12)">
     <div class="wrap">
       <div>
-        <h2>Come see it <span class="accent">first.</span></h2>
-        <address>
+        <h2 class="reveal">Come see it <span class="accent">first.</span></h2>
+        <address class="reveal">
           <strong>Lift STL</strong><br>
           8356 Musick Memorial Dr<br>
           Brentwood, MO 63144<br>
@@ -546,14 +749,14 @@ footer.site a{color:var(--cream);text-decoration:none}
         </address>
       </div>
       <div>
-        <h3>Staffed hours</h3>
-        <ul class="hours">
+        <h3 class="reveal">Staffed hours</h3>
+        <ul class="hours reveal">
           <li><span>Mon – Thu</span><span>6 AM – 7 PM</span></li>
           <li><span>Friday</span><span>6 AM – 5 PM</span></li>
           <li><span>Saturday</span><span>6 AM – 2 PM</span></li>
           <li><span>Sunday</span><span>8 AM – 2 PM</span></li>
         </ul>
-        <p style="color:var(--gray);font-size:15px">Members get <strong style="color:var(--cream)">24/7 keycard access</strong> — train on your schedule, not ours.</p>
+        <p class="reveal" style="color:var(--gray);font-size:15px">Members get <strong style="color:var(--cream)">24/7 keycard access</strong> — train on your schedule, not ours.</p>
       </div>
     </div>
   </section>
@@ -561,9 +764,9 @@ footer.site a{color:var(--cream);text-decoration:none}
   <!-- ============ BOTTOM FORM ============ -->
   <section id="bottom-form">
     <div class="wrap" style="max-width:640px">
-      <h2 style="text-align:center">Ready for day <span class="accent">#1?</span></h2>
-      <p style="text-align:center">Grab your free day pass and tour — 30 seconds, three fields, no commitment.</p>
-      <div class="lead-card" style="box-shadow:0 14px 40px rgba(46,48,54,.18)">
+      <h2 class="center reveal">Ready for day <span class="accent">#1?</span></h2>
+      <p class="center reveal">Grab your free day pass and tour — 30 seconds, three fields, no commitment.</p>
+      <div class="lead-card reveal" style="box-shadow:0 14px 40px rgba(46,48,54,.18)">
         <form class="lead-form" data-form-location="bottom" novalidate>
           <div class="form-fields">
             <div class="field">
@@ -580,6 +783,11 @@ footer.site a{color:var(--cream);text-decoration:none}
             </div>
             <button class="btn btn-dark btn-block" type="submit">Get My Free Day Pass &amp; Tour</button>
             <p class="form-error" role="alert"></p>
+            <ol class="next-steps" aria-label="What happens next">
+              <li><b>1. We text you</b>to say hi</li>
+              <li><b>2. Pick a time</b>that fits your day</li>
+              <li><b>3. Come train</b>on us — free</li>
+            </ol>
             <p class="form-note">Prefer to talk? Call <a href="tel:+13142963117">(314) 296-3117</a></p>
           </div>
           <div class="form-success" role="status">
@@ -697,6 +905,27 @@ document.querySelectorAll('form.lead-form').forEach(function (form) {
     });
   });
 });
+
+/* ---- Scroll-reveal — skipped entirely under reduced motion ---- */
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  /* Failsafe: never leave content hidden for non-scrolling renderers
+     (ad-quality crawlers, screenshot bots, stalled IO). */
+  setTimeout(function () {
+    document.querySelectorAll('.reveal:not(.in)').forEach(function (el) { el.classList.add('in'); });
+  }, 3000);
+})();
 </script>
 </body>
 </html>

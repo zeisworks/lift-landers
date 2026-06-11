@@ -73,6 +73,32 @@ extracted: charcoal fill + red border + red text → fills red on hover.
   labels: Rhett Mueller, Seth Buhman, Aakarsh, Eric (12 weeks). No
   fabricated social proof; no Google rating shown (none verified).
 
+## Competitive positioning (researched June 2026)
+
+Life Time ("Dynamic Personal Training") and Equinox ("EQX OS") both sell
+PT the same way: holistic science positioning, assessment-led onboarding,
+anatomy-of-a-session storytelling — and **pricing hidden behind a sales
+appointment**, sold on top of separate club dues (Life Time PT runs
+~$110+/hr before membership). Life Time Frontenac is the closest premium
+competitor to Brentwood.
+
+This page is built to win against that playbook rather than imitate it:
+
+- **Out-credential them**: the founder has trained MLB/MiLB players, Navy
+  SEALs, and NFL lineman Jake Long (all from the live About page) — leads
+  the hero subhead, a red credibility strip, and coach credential chips.
+- **Weaponize transparency**: "Where the luxury clubs lose" comparison
+  table (Lift vs. "typical big-box club" — deliberately unnamed and
+  hedged with a footnote so every row stays defensible), a stats band
+  ("100% of pricing published here"), and pricing copy that calls out the
+  quote-appointment pattern.
+- **Borrow what works**: assessment-anatomy storytelling (the 4-part
+  evaluation grid under the explainer video), "what happens next" steps
+  under each form, and an objection-handling FAQ — all from facts already
+  published on lift-stl.com.
+- **Stay honest**: no named-competitor pricing claims, no invented
+  ratings, no fake scarcity.
+
 ## Conversion structure (what changed vs. the current PT page)
 
 - **H1 message-matches the query**: "St. Louis personal training that gets
