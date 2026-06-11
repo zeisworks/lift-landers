@@ -124,6 +124,26 @@ This page is built to win against that playbook rather than imitate it:
 - Accessibility: visible `:focus-visible` states, labeled inputs,
   `prefers-reduced-motion` respected, semantic landmarks.
 
+## Hardening applied (June 2026 audit)
+
+- **SMS consent microcopy** under both submit buttons (TCPA-style: may
+  call/text to schedule, STOP to opt out).
+- **Click-ID/UTM capture**: `gclid`/`gbraid`/`wbraid` + `utm_*` are read
+  from the landing URL and sent with every lead for offline conversion
+  imports.
+- **Phone-call conversion fires on coarse-pointer (mobile) taps only** so
+  desktop clicks on a phone number don't inflate counts.
+- **Spam/junk protection**: honeypot field (silent fake-success for bots)
+  and 10–11-digit phone validation.
+- **Performance**: before/after photos transcoded PNG→JPEG via the Wix CDN
+  (~1.74 MB → ~133 KB); hero image + all four brand fonts preloaded.
+- **Contrast**: AA-compliant tints (`--ink-soft`/`--cream-soft`) for small
+  secondary text; CTA button labels switched from red-on-charcoal (~3.2:1)
+  to cream-on-charcoal, keeping the red border + red hover fill.
+- **Header/hero**: charcoal header with red keyline, logo tagline lockup,
+  and the homepage video's LIFT-branded dumbbell frame as the hero image
+  (replacing the blurry evaluation-video poster).
+
 ## 🚨 Launch blockers — could not be determined from the live site
 
 These are deliberately left as marked placeholders rather than guessed:
@@ -144,3 +164,10 @@ These are deliberately left as marked placeholders rather than guessed:
      microcopy).
 3. **Indexing**: a commented `noindex` meta is included — uncomment it if
    the page will live on the same domain as the organic PT page.
+4. **Privacy policy**: lift-stl.com has none (`/privacy-policy`,
+   `/privacy`, `/terms` all 404). Google Ads lead-gen policy expects one on
+   the landing page — publish a policy and swap in the commented footer
+   link (`REPLACE_WITH_PRIVACY_POLICY_URL`).
+5. **Owner sign-off on copy**: the "private gym" framing (the site itself
+   says "24/7 Public Gym") and the "we'll text you" follow-up promise both
+   need a yes from Eric — see audit notes.

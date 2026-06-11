@@ -25,6 +25,11 @@
 -->
 
 <link rel="preconnect" href="https://static.wixstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/lift-dumbbells.jpg">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://static.wixstatic.com/ufonts/fbc069_764d84d68ecc48ea8887be4b3fe693c4/woff2/file.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://static.wixstatic.com/ufonts/fbc069_2edb4eeb455a4da3871a535ac2b125eb/woff2/file.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://static.wixstatic.com/ufonts/2cec0a_c6acf09e4ba343babb5f0e0c71224cb8/woff2/file.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://static.wixstatic.com/ufonts/1c84a3_83aa59d0e76243d0955b5e8a09ecc730/woff2/file.woff2">
 <style>
 /* ----------------------------------------------------------------
    Brand tokens — extracted from the live Wix theme on
@@ -66,6 +71,9 @@
   --gray:#95979D;          /* color_13 — muted text on dark */
   --gray-mid:#82848B;      /* color_14 */
   --white:#FFFFFF;
+  /* WCAG-AA tints of the brand inks for small secondary text */
+  --ink-soft:rgba(46,48,54,.78);
+  --cream-soft:rgba(243,241,236,.84);
   --heading:'Rift Bold','Arial Narrow',Impact,sans-serif;
   --heading-italic:'Rift Bold Italic','Arial Narrow',Impact,sans-serif;
   --body:'Avenir 55','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -110,7 +118,9 @@ img{max-width:100%;display:block}
   cursor:pointer;
   transition:background-color .4s ease,border-color .4s ease,color .4s ease;
 }
-.btn-dark{background:var(--charcoal);color:var(--red)}
+/* Cream label (not the site's red-on-charcoal) for WCAG AA contrast;
+   the red border + red hover fill keep the brand pattern. */
+.btn-dark{background:var(--charcoal);color:var(--cream)}
 .btn-dark:hover{background:var(--red);color:var(--cream)}
 .btn-solid{background:var(--red);color:var(--cream)}
 .btn-solid:hover{background:var(--charcoal);border-color:var(--charcoal);color:var(--cream)}
@@ -142,33 +152,39 @@ section{padding:84px 0;position:relative;overflow:hidden}
 
 /* ---------- header ---------- */
 header.site{
-  background:var(--cream);
-  border-bottom:1px solid rgba(46,48,54,.08);
+  background:var(--charcoal);
+  color:var(--cream);
+  border-bottom:3px solid var(--red);
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
   position:sticky;top:0;z-index:40;
 }
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo svg{width:50px;height:50px}
-.logo span{font-family:var(--heading);font-size:26px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo svg{width:52px;height:52px}
+.logo span{font-family:var(--heading);font-size:30px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.logo small{display:block;font:normal 10.5px/1.2 var(--heavy);letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-top:3px}
 .header-right{display:flex;align-items:center;gap:22px}
-.header-call{font-family:var(--heavy);font-size:15px;text-decoration:none;white-space:nowrap}
-.header-call strong{color:var(--red)}
+.header-call{font-family:var(--heavy);font-size:15px;text-decoration:none;white-space:nowrap;color:var(--cream-soft)}
+.header-call strong{color:var(--cream);font-size:17px}
 @media (max-width:760px){
   header.site{position:static}
   .header-right .btn{display:none}
 }
 @media (max-width:480px){
   .logo svg{width:42px;height:42px}
-  .logo span{font-size:20px}
+  .logo span{font-size:22px}
+  .logo small{display:none}
   .header-call{font-size:13px}
+  .header-call strong{font-size:15px}
   .header-call .header-loc{display:none}
 }
 
 /* ---------- hero ---------- */
 .hero{
-  background:var(--charcoal) url('https://static.wixstatic.com/media/47b482_1ee9cd80ddcc4316b76ded73a305b9c5f000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/gym.jpg') center/cover no-repeat;
+  /* LIFT-branded dumbbell rack — the homepage hero video's poster frame */
+  background:var(--charcoal) url('https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/lift-dumbbells.jpg') center/cover no-repeat;
   background-blend-mode:multiply;
-  background-color:rgba(46,48,54,.93);
+  background-color:rgba(46,48,54,.88);
   color:var(--cream);
   padding:64px 0 84px;
   overflow:visible;
@@ -194,7 +210,7 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
   box-shadow:0 18px 50px rgba(0,0,0,.35);
 }
 .lead-card h2{font-size:clamp(28px,2.6vw,38px);line-height:1.12}
-.lead-card p.fine{font-size:14px;color:var(--gray-mid);margin-bottom:20px}
+.lead-card p.fine{font-size:14px;color:var(--ink-soft);margin-bottom:20px}
 .field{margin-bottom:16px}
 .field label{display:block;font:normal 13px/1.4 var(--heavy);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
 .field input{
@@ -207,10 +223,13 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
   padding:13px 14px;
 }
 .field input:focus-visible{outline-offset:0}
-.next-steps{list-style:none;margin:18px 0 0;padding:14px 0 0;border-top:1px solid rgba(46,48,54,.1);font-size:13px;color:var(--gray-mid);display:flex;gap:6px;justify-content:space-between;text-align:center}
+.next-steps{list-style:none;margin:18px 0 0;padding:14px 0 0;border-top:1px solid rgba(46,48,54,.1);font-size:13px;color:var(--ink-soft);display:flex;gap:6px;justify-content:space-between;text-align:center}
 .next-steps li{flex:1}
 .next-steps b{display:block;font-family:var(--heavy);font-weight:normal;color:var(--charcoal);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
-.form-note{font-size:13px;color:var(--gray-mid);margin:14px 0 0;text-align:center}
+.form-note{font-size:13px;color:var(--ink-soft);margin:14px 0 0;text-align:center}
+.consent{font-size:12px;line-height:1.55;color:var(--ink-soft);margin:12px 0 0;text-align:center}
+/* Honeypot — visually removed, ignored by humans, filled by bots */
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 .form-success{
   display:none;
   background:var(--charcoal);color:var(--cream);
@@ -231,7 +250,7 @@ form.is-done .form-success{display:block}
 .stats{background:var(--charcoal);color:var(--cream);padding:54px 0}
 .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center}
 .stat b{display:block;font-family:var(--heading);font-weight:normal;font-size:clamp(40px,4.6vw,64px);line-height:1;color:var(--red)}
-.stat span{font:normal 13px/1.5 var(--heavy);letter-spacing:.08em;text-transform:uppercase;color:var(--gray);display:block;margin-top:8px}
+.stat span{font:normal 13px/1.5 var(--heavy);letter-spacing:.08em;text-transform:uppercase;color:var(--cream-soft);display:block;margin-top:8px}
 @media (max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr;gap:34px 16px}}
 
 /* ---------- how it works ---------- */
@@ -244,18 +263,18 @@ form.is-done .form-success{display:block}
   display:block;font-family:var(--heading);font-size:44px;color:var(--red);line-height:1;margin-bottom:12px;
 }
 .step h3{font-size:24px}
-.step .price-tag{font-family:var(--heavy);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-mid);display:block;margin-bottom:10px}
+.step .price-tag{font-family:var(--heavy);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:10px}
 .step .price-tag b{color:var(--red)}
 
 /* ---------- explainer video + evaluation anatomy ---------- */
 .explainer{margin:56px auto 0;max-width:880px}
 .explainer video{width:100%;height:auto;display:block;background:var(--charcoal);border-top:6px solid var(--red)}
-.explainer figcaption{font:normal 13px/1.5 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--gray-mid);text-align:center;padding:12px 0 0}
+.explainer figcaption{font:normal 13px/1.5 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);text-align:center;padding:12px 0 0}
 .eval-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(46,48,54,.12);max-width:880px;margin:34px auto 0}
 .eval-grid div{background:var(--cream);padding:20px 18px}
 .eval-grid b{font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:6px}
 .eval-grid b i{font-family:var(--heading);font-style:normal;color:var(--red);margin-right:6px}
-.eval-grid span{font-size:13.5px;color:var(--gray-mid);line-height:1.5;display:block}
+.eval-grid span{font-size:13.5px;color:var(--ink-soft);line-height:1.5;display:block}
 @media (max-width:860px){.eval-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.eval-grid{grid-template-columns:1fr}}
 
@@ -266,12 +285,12 @@ form.is-done .form-success{display:block}
 .compare thead th{font:normal 13px/1.4 var(--heavy);letter-spacing:.08em;text-transform:uppercase}
 .compare thead th.col-lift{background:var(--charcoal);color:var(--cream)}
 .compare thead th.col-lift .accent{font-size:18px}
-.compare thead th.col-box{background:rgba(46,48,54,.07);color:var(--gray-mid)}
-.compare tbody th{font:normal 13px/1.5 var(--heavy);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-mid);width:22%}
+.compare thead th.col-box{background:rgba(46,48,54,.07);color:var(--ink-soft)}
+.compare tbody th{font:normal 13px/1.5 var(--heavy);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);width:22%}
 .compare td.col-lift{font-family:var(--heavy);background:rgba(225,71,71,.05)}
 .compare td.col-lift::before{content:"";display:inline-block;width:14px;height:14px;margin-right:10px;background:var(--red);clip-path:polygon(38% 100%,0 62%,14% 48%,38% 72%,86% 10%,100% 24%)}
-.compare td.col-box{color:var(--gray-mid)}
-.compare-note{font-size:13px;color:var(--gray-mid);margin-top:14px}
+.compare td.col-box{color:var(--ink-soft)}
+.compare-note{font-size:13px;color:var(--ink-soft);margin-top:14px}
 
 /* ---------- features (dark) ---------- */
 .dark{background:var(--charcoal);color:var(--cream)}
@@ -284,7 +303,7 @@ form.is-done .form-success{display:block}
   clip-path:polygon(38% 100%,0 62%,14% 48%,38% 72%,86% 10%,100% 24%);
 }
 .feat-list b{font-family:var(--heavy);font-weight:normal;text-transform:uppercase;letter-spacing:.05em;display:block;font-size:15px}
-.feat-list span{color:var(--gray);font-size:15px}
+.feat-list span{color:var(--cream-soft);font-size:15px}
 .dark figure{margin:0}
 .dark figure img{width:100%;height:100%;object-fit:cover}
 
@@ -311,7 +330,7 @@ blockquote::before{
   color:var(--red);position:absolute;top:36px;left:24px;opacity:.25;
 }
 blockquote p{position:relative}
-blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--gray-mid)}
+blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
 .ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
 .ba-grid figure{margin:0;background:var(--paper);color:var(--charcoal)}
 .ba-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
@@ -331,7 +350,7 @@ blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spaci
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";font-family:var(--heading);font-size:28px;color:var(--red);line-height:1;flex:none}
 .faq details[open] summary::after{content:"–"}
-.faq .faq-a{padding:0 24px 22px;font-size:15px;color:var(--gray-mid)}
+.faq .faq-a{padding:0 24px 22px;font-size:15px;color:var(--ink-soft)}
 .faq .faq-a a{color:var(--red)}
 
 /* ---------- visit / hours ---------- */
@@ -344,7 +363,7 @@ blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spaci
 .visit .map-link:hover{text-decoration:underline}
 
 /* ---------- footer ---------- */
-footer.site{background:var(--charcoal);color:var(--gray);padding:34px 0 110px;font-size:13px;border-top:1px solid rgba(243,241,236,.12)}
+footer.site{background:var(--charcoal);color:var(--cream-soft);padding:34px 0 110px;font-size:13px;border-top:1px solid rgba(243,241,236,.12)}
 footer.site .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;justify-content:space-between}
 footer.site a{color:var(--cream);text-decoration:none}
 
@@ -425,7 +444,7 @@ footer.site a{color:var(--cream);text-decoration:none}
           <path fill="#E14747" d="M342.524 459.821h-5.576v49.466h33.418v-5.156h-27.842v-44.31Z"/>
         </g>
       </svg>
-      <span>Lift STL</span>
+      <span>Lift STL<small>Personal Training · Brentwood, MO</small></span>
     </a>
     <div class="header-right">
       <a class="header-call" href="tel:+13142963117"><span class="header-loc">Brentwood, MO &nbsp;·&nbsp; </span><strong>(314) 296-3117</strong></a>
@@ -466,10 +485,15 @@ footer.site a{color:var(--cream);text-decoration:none}
             </div>
             <div class="field">
               <label for="hero-phone">Phone</label>
-              <input id="hero-phone" name="phone" type="tel" autocomplete="tel" required>
+              <input id="hero-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="hero-website">Website</label>
+              <input id="hero-website" name="website" type="text" tabindex="-1" autocomplete="off">
             </div>
             <button class="btn btn-dark btn-block" type="submit">Get My Free Day Pass &amp; Tour</button>
             <p class="form-error" role="alert"></p>
+            <p class="consent">By submitting, you agree that Lift STL may call or text you to schedule your visit. Message &amp; data rates may apply; reply STOP to opt out.</p>
             <ol class="next-steps" aria-label="What happens next">
               <li><b>1. We text you</b>to say hi</li>
               <li><b>2. Pick a time</b>that fits your day</li>
@@ -687,15 +711,15 @@ footer.site a{color:var(--cream);text-decoration:none}
           <figcaption>Rhett Mueller</figcaption>
         </figure>
         <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/48c380_d98ca07f7496488d9b807ca378ef4ccf~mv2.png/v1/fill/w_600,h_450,al_c,q_80/seth.png" alt="Seth Buhman before and after training at Lift STL" loading="lazy" width="600" height="450">
+          <img src="https://static.wixstatic.com/media/48c380_d98ca07f7496488d9b807ca378ef4ccf~mv2.png/v1/fill/w_600,h_450,al_c,q_80/seth.jpg" alt="Seth Buhman before and after training at Lift STL" loading="lazy" width="600" height="450">
           <figcaption>Seth Buhman</figcaption>
         </figure>
         <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/48c380_c93f19c535324760b09ad74270ff59c2~mv2.png/v1/fill/w_600,h_450,al_c,q_80/aakarsh.png" alt="Aakarsh before and after training at Lift STL" loading="lazy" width="600" height="450">
+          <img src="https://static.wixstatic.com/media/48c380_c93f19c535324760b09ad74270ff59c2~mv2.png/v1/fill/w_600,h_450,al_c,q_80/aakarsh.jpg" alt="Aakarsh before and after training at Lift STL" loading="lazy" width="600" height="450">
           <figcaption>Aakarsh</figcaption>
         </figure>
         <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/48c380_d2715d50fd6a49bab57008a23b47288d~mv2.png/v1/fill/w_600,h_450,al_c,q_80/eric12.png" alt="Eric's twelve-week before and after at Lift STL" loading="lazy" width="600" height="450">
+          <img src="https://static.wixstatic.com/media/48c380_d2715d50fd6a49bab57008a23b47288d~mv2.png/v1/fill/w_600,h_450,al_c,q_80/eric12.jpg" alt="Eric's twelve-week before and after at Lift STL" loading="lazy" width="600" height="450">
           <figcaption>Eric — 12 weeks</figcaption>
         </figure>
       </div>
@@ -756,7 +780,7 @@ footer.site a{color:var(--cream);text-decoration:none}
           <li><span>Saturday</span><span>6 AM – 2 PM</span></li>
           <li><span>Sunday</span><span>8 AM – 2 PM</span></li>
         </ul>
-        <p class="reveal" style="color:var(--gray);font-size:15px">Members get <strong style="color:var(--cream)">24/7 keycard access</strong> — train on your schedule, not ours.</p>
+        <p class="reveal" style="color:var(--cream-soft);font-size:15px">Members get <strong style="color:var(--cream)">24/7 keycard access</strong> — train on your schedule, not ours.</p>
       </div>
     </div>
   </section>
@@ -779,10 +803,15 @@ footer.site a{color:var(--cream);text-decoration:none}
             </div>
             <div class="field">
               <label for="bottom-phone">Phone</label>
-              <input id="bottom-phone" name="phone" type="tel" autocomplete="tel" required>
+              <input id="bottom-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="bottom-website">Website</label>
+              <input id="bottom-website" name="website" type="text" tabindex="-1" autocomplete="off">
             </div>
             <button class="btn btn-dark btn-block" type="submit">Get My Free Day Pass &amp; Tour</button>
             <p class="form-error" role="alert"></p>
+            <p class="consent">By submitting, you agree that Lift STL may call or text you to schedule your visit. Message &amp; data rates may apply; reply STOP to opt out.</p>
             <ol class="next-steps" aria-label="What happens next">
               <li><b>1. We text you</b>to say hi</li>
               <li><b>2. Pick a time</b>that fits your day</li>
@@ -804,6 +833,10 @@ footer.site a{color:var(--cream);text-decoration:none}
 <footer class="site">
   <div class="wrap">
     <span>© 2026 Lift-STL · 8356 Musick Memorial Dr, Brentwood, MO 63144</span>
+    <!-- TODO before launch: lift-stl.com has no privacy policy page
+         (checked /privacy-policy, /privacy, /terms — all 404). Google Ads
+         lead-gen policy expects one; publish a policy and link it here:
+    <a href="REPLACE_WITH_PRIVACY_POLICY_URL">Privacy Policy</a> -->
     <a href="tel:+13142963117">(314) 296-3117</a>
   </div>
 </footer>
@@ -844,10 +877,22 @@ function fireConversion(sendTo, params) {
   }
 }
 
-/* ---- Conversion action #1: tel: clicks (every tap-to-call) ---- */
+/* Click IDs + UTM params captured at landing, forwarded with every
+   lead so the CRM can do offline conversion imports per campaign. */
+var ATTRIBUTION = (function () {
+  var params = new URLSearchParams(location.search);
+  var out = {};
+  ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+    .forEach(function (k) { var v = params.get(k); if (v) out[k] = v; });
+  return out;
+})();
+
+/* ---- Conversion action #1: tel: taps ----
+   Mobile (coarse pointer) only — desktop clicks on a phone number
+   rarely place a call and would inflate the conversion count. */
 document.addEventListener('click', function (e) {
   var link = e.target.closest && e.target.closest('a[href^="tel:"]');
-  if (link) {
+  if (link && window.matchMedia('(pointer: coarse)').matches) {
     fireConversion(CONFIG.ADS_CONVERSION_PHONE_CALL);
   }
 });
@@ -863,21 +908,37 @@ document.querySelectorAll('.explainer video').forEach(function (v) {
 
 /* ---- Conversion action #2: lead form submit success ---- */
 document.querySelectorAll('form.lead-form').forEach(function (form) {
+  form.elements.phone.addEventListener('input', function () {
+    this.setCustomValidity('');
+  });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var errorEl = form.querySelector('.form-error');
     errorEl.style.display = 'none';
 
+    /* Honeypot: bots fill the hidden field — show success, send nothing. */
+    if (form.elements.website && form.elements.website.value) {
+      form.classList.add('is-done');
+      return;
+    }
+
+    var phoneEl = form.elements.phone;
+    var digits = phoneEl.value.replace(/\D/g, '');
+    if (digits.length < 10 || digits.length > 11) {
+      phoneEl.setCustomValidity('Please enter a 10-digit phone number.');
+    } else {
+      phoneEl.setCustomValidity('');
+    }
     if (!form.reportValidity()) return;
 
-    var payload = {
+    var payload = Object.assign({
       name: form.elements.name.value.trim(),
       email: form.elements.email.value.trim(),
-      phone: form.elements.phone.value.trim(),
+      phone: phoneEl.value.trim(),
       source: 'google-ads-personal-training-lp',
       formLocation: form.dataset.formLocation,
       page: location.href
-    };
+    }, ATTRIBUTION);
 
     var button = form.querySelector('button[type="submit"]');
     button.disabled = true;
