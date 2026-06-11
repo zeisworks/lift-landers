@@ -60,6 +60,14 @@ extracted: charcoal fill + red border + red text → fills red on hover.
 - **Imagery**: all photos are the site's own Wix media (gym hero with red
   turf, branded squat photo, curl photo) served via Wix's image CDN with
   resize transforms.
+- **Video**: the current PT page's hero background video is actually a
+  produced 60-second explainer ("How to find the best fitness plan for
+  your goals") with burned-in captions, hosted at
+  `video.wixstatic.com/video/47b482_1ee9cd80ddcc4316b76ded73a305b9c5/720p/mp4/file.mp4`
+  (480p also available). It's embedded click-to-play in the "How it works"
+  section (its captions would clash with the H1 as a background loop), with
+  `preload="none"` so it costs zero bytes until played. Its first frame is
+  reused as the hero's static background image.
 - **Before/afters**: real, already-published member transformations from
   the homepage success gallery, with names taken from the gallery's own
   labels: Rhett Mueller, Seth Buhman, Aakarsh, Eric (12 weeks). No

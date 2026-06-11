@@ -205,6 +205,11 @@ form.is-done .form-success{display:block}
 .step .price-tag{font-family:var(--heavy);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-mid);display:block;margin-bottom:10px}
 .step .price-tag b{color:var(--red)}
 
+/* ---------- explainer video ---------- */
+.explainer{margin:48px auto 0;max-width:860px}
+.explainer video{width:100%;height:auto;display:block;background:var(--charcoal);border-top:6px solid var(--red)}
+.explainer figcaption{font:normal 13px/1.5 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--gray-mid);text-align:center;padding:12px 0 0}
+
 /* ---------- features (dark) ---------- */
 .dark{background:var(--charcoal);color:var(--cream)}
 .dark .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
@@ -419,6 +424,15 @@ footer.site a{color:var(--cream);text-decoration:none}
           <p>One-on-one sessions with your trainer, regular re-evaluations, and bi-weekly body-fat testing to prove it's working.</p>
         </div>
       </div>
+      <!-- The site's own produced explainer (the video behind the current
+           PT page hero). preload="none" — nothing downloads until play. -->
+      <figure class="explainer">
+        <video controls preload="none" playsinline width="1280" height="720"
+          poster="https://static.wixstatic.com/media/47b482_1ee9cd80ddcc4316b76ded73a305b9c5f000.jpg/v1/fill/w_1200,h_675,al_c,q_80/evaluation-video-poster.jpg">
+          <source src="https://video.wixstatic.com/video/47b482_1ee9cd80ddcc4316b76ded73a305b9c5/720p/mp4/file.mp4" type="video/mp4">
+        </video>
+        <figcaption>Watch: how we find the best fitness plan for your goals (60 sec)</figcaption>
+      </figure>
       <p style="text-align:center;margin-top:40px">
         <a class="btn btn-dark" href="#bottom-form" data-cta>Get My Free Day Pass &amp; Tour</a>
       </p>
@@ -628,6 +642,15 @@ document.addEventListener('click', function (e) {
   if (link) {
     fireConversion(CONFIG.ADS_CONVERSION_PHONE_CALL);
   }
+});
+
+/* ---- Optional engagement event (not a conversion): explainer plays ---- */
+document.querySelectorAll('.explainer video').forEach(function (v) {
+  v.addEventListener('play', function () {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'video_play', { event_category: 'engagement', event_label: 'evaluation-explainer' });
+    }
+  }, { once: true });
 });
 
 /* ---- Conversion action #2: lead form submit success ---- */
