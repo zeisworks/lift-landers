@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Trainer St. Louis | Lift STL — Free Day Pass &amp; Tour</title>
+<meta name="description" content="One-on-one personal training in St. Louis at Lift's private Brentwood gym. Custom programming, regular body-fat testing, 24/7 access. Start with a free day pass and tour — call (314) 296-3117.">
+<!-- Paid-traffic landing page. Uncomment to keep it out of organic search and avoid duplicating lift-stl.com/personal-training: -->
+<!-- <meta name="robots" content="noindex, nofollow"> -->
+
+<!-- ============================================================
+     GOOGLE ADS TAG — TODO before launch
+     1. Replace AW-XXXXXXXXX with the account's conversion ID.
+     2. Uncomment this block.
+     3. Set the two conversion labels in CONFIG (script at bottom).
+     ============================================================ -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXX');
+</script>
+-->
+
+<link rel="preconnect" href="https://static.wixstatic.com" crossorigin>
+<style>
+/* ----------------------------------------------------------------
+   Brand tokens — extracted from the live Wix theme on
+   lift-stl.com (/, /personal-training, /join), June 2026.
+   Color vars mirror Wix --color_N; fonts are the site's own
+   uploaded files served from Wix's CDN.
+   ---------------------------------------------------------------- */
+@font-face{ /* Rift Bold — site heading face (Wix --font_2..6) */
+  font-family:'Rift Bold';
+  src:url('https://static.wixstatic.com/ufonts/fbc069_764d84d68ecc48ea8887be4b3fe693c4/woff2/file.woff2') format('woff2'),
+      url('https://static.wixstatic.com/ufonts/fbc069_764d84d68ecc48ea8887be4b3fe693c4/woff/file.woff') format('woff');
+  font-display:swap;
+}
+@font-face{ /* Rift Bold Italic — accent word in headings (Wix --font_0) */
+  font-family:'Rift Bold Italic';
+  src:url('https://static.wixstatic.com/ufonts/fbc069_2edb4eeb455a4da3871a535ac2b125eb/woff2/file.woff2') format('woff2'),
+      url('https://static.wixstatic.com/ufonts/fbc069_2edb4eeb455a4da3871a535ac2b125eb/woff/file.woff') format('woff');
+  font-display:swap;
+}
+@font-face{ /* Avenir LT Std 55 Roman — body (Wix --font_7..9) */
+  font-family:'Avenir 55';
+  src:url('https://static.wixstatic.com/ufonts/2cec0a_c6acf09e4ba343babb5f0e0c71224cb8/woff2/file.woff2') format('woff2'),
+      url('https://static.wixstatic.com/ufonts/2cec0a_c6acf09e4ba343babb5f0e0c71224cb8/woff/file.woff') format('woff');
+  font-display:swap;
+}
+@font-face{ /* Avenir LT Std 85 Heavy — buttons & labels */
+  font-family:'Avenir 85';
+  src:url('https://static.wixstatic.com/ufonts/1c84a3_83aa59d0e76243d0955b5e8a09ecc730/woff2/file.woff2') format('woff2'),
+      url('https://static.wixstatic.com/ufonts/1c84a3_83aa59d0e76243d0955b5e8a09ecc730/woff/file.woff') format('woff');
+  font-display:swap;
+}
+
+:root{
+  --charcoal:#2E3036;      /* color_15 — dark sections, headings, body text */
+  --cream:#F3F1EC;         /* color_11/16 — page background */
+  --paper:#FAF9F8;         /* color_20 — light cards */
+  --red:#E14747;           /* color_17 — brand red (logo, accents, CTA) */
+  --red-deep:#8F3C3C;      /* color_18 — darker red shade */
+  --gray:#95979D;          /* color_13 — muted text on dark */
+  --gray-mid:#82848B;      /* color_14 */
+  --white:#FFFFFF;
+  --heading:'Rift Bold','Arial Narrow',Impact,sans-serif;
+  --heading-italic:'Rift Bold Italic','Arial Narrow',Impact,sans-serif;
+  --body:'Avenir 55','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --heavy:'Avenir 85','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--charcoal);
+  font:normal 16px/1.6 var(--body);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Type scale mirrors the site theme (96/64/48/40/32/24, 1.4em),
+   clamped for small screens. Headings are set in caps like the
+   live site; the .accent word is lowercase Rift Bold Italic. */
+h1,h2,h3{font-family:var(--heading);font-weight:normal;text-transform:uppercase;line-height:1.15;margin:0 0 .35em}
+h1{font-size:clamp(44px,7.2vw,96px)}
+h2{font-size:clamp(34px,5vw,64px)}
+h3{font-size:clamp(24px,3vw,32px)}
+.accent{font-family:var(--heading-italic);text-transform:lowercase;color:var(--red)}
+p{margin:0 0 1em}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:2px}
+
+/* Buttons — pill (Wix --rd:999px), 2px border, Avenir 85 Heavy,
+   0.4s ease transitions, exactly as on the live site. */
+.btn{
+  display:inline-block;
+  font:normal 16px/1.4 var(--heavy);
+  letter-spacing:.02em;
+  text-decoration:none;
+  text-align:center;
+  border-radius:999px;
+  border:2px solid var(--red);
+  padding:15px 36px;
+  cursor:pointer;
+  transition:background-color .4s ease,border-color .4s ease,color .4s ease;
+}
+.btn-dark{background:var(--charcoal);color:var(--red)}
+.btn-dark:hover{background:var(--red);color:var(--cream)}
+.btn-solid{background:var(--red);color:var(--cream)}
+.btn-solid:hover{background:var(--charcoal);border-color:var(--charcoal);color:var(--cream)}
+.btn-block{display:block;width:100%}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+
+/* ---------- header ---------- */
+header.site{
+  background:var(--cream);
+  border-bottom:1px solid rgba(46,48,54,.08);
+}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:54px;height:54px}
+.logo span{font-family:var(--heading);font-size:26px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+@media (max-width:480px){
+  .logo svg{width:44px;height:44px}
+  .logo span{font-size:20px}
+  .header-call{font-size:13px}
+  .header-call .header-loc{display:none}
+}
+.header-call{font-family:var(--heavy);font-size:15px;text-decoration:none;white-space:nowrap}
+.header-call strong{color:var(--red)}
+
+/* ---------- hero ---------- */
+.hero{
+  background:var(--charcoal) url('https://static.wixstatic.com/media/47b482_1ee9cd80ddcc4316b76ded73a305b9c5f000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/gym.jpg') center/cover no-repeat;
+  background-blend-mode:multiply;
+  background-color:rgba(46,48,54,.92);
+  color:var(--cream);
+  padding:64px 0 80px;
+}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,1fr);gap:56px;align-items:center}
+.hero p.sub{font-size:18px;max-width:34em;color:var(--cream)}
+.hero ul.ticks{list-style:none;margin:24px 0 0;padding:0;font-family:var(--heavy);font-size:15px}
+.hero ul.ticks li{padding:6px 0 6px 32px;position:relative}
+.hero ul.ticks li::before{
+  content:"";position:absolute;left:0;top:9px;width:18px;height:18px;
+  background:var(--red);
+  clip-path:polygon(38% 100%,0 62%,14% 48%,38% 72%,86% 10%,100% 24%);
+}
+
+/* ---------- lead form card ---------- */
+.lead-card{
+  background:var(--paper);
+  color:var(--charcoal);
+  padding:36px 32px;
+  border-top:6px solid var(--red);
+  box-shadow:0 18px 50px rgba(0,0,0,.35);
+}
+.lead-card h2{font-size:clamp(28px,2.6vw,38px);line-height:1.15}
+.lead-card p.fine{font-size:14px;color:var(--gray-mid);margin-bottom:20px}
+.field{margin-bottom:16px}
+.field label{display:block;font:normal 13px/1.4 var(--heavy);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.field input{
+  width:100%;
+  font:normal 16px/1.4 var(--body);
+  color:var(--charcoal);
+  background:var(--white);
+  border:1px solid var(--gray);
+  border-radius:2px;
+  padding:13px 14px;
+}
+.field input:focus-visible{outline-offset:0}
+.form-note{font-size:13px;color:var(--gray-mid);margin:14px 0 0;text-align:center}
+.form-success{
+  display:none;
+  background:var(--charcoal);color:var(--cream);
+  padding:24px;border-radius:2px;text-align:center;
+}
+.form-success strong{color:var(--red);font-family:var(--heavy)}
+form.is-done .form-fields{display:none}
+form.is-done .form-success{display:block}
+.form-error{display:none;color:var(--red-deep);font-size:14px;margin-top:10px;text-align:center}
+
+/* ---------- trust strip ---------- */
+.strip{background:var(--red);color:var(--cream);padding:20px 0}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:10px 40px;justify-content:center;font-family:var(--heavy);font-size:15px;text-align:center}
+
+/* ---------- how it works ---------- */
+.steps{counter-reset:step}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+.step{background:var(--paper);padding:32px 28px;border-top:4px solid var(--charcoal)}
+.step.free{border-top-color:var(--red)}
+.step::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  display:block;font-family:var(--heading);font-size:40px;color:var(--red);line-height:1;margin-bottom:12px;
+}
+.step h3{font-size:24px}
+.step .price-tag{font-family:var(--heavy);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-mid);display:block;margin-bottom:10px}
+.step .price-tag b{color:var(--red)}
+
+/* ---------- features (dark) ---------- */
+.dark{background:var(--charcoal);color:var(--cream)}
+.dark .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.feat-list{list-style:none;margin:28px 0 0;padding:0}
+.feat-list li{padding:14px 0 14px 36px;position:relative;border-bottom:1px solid rgba(243,241,236,.12)}
+.feat-list li::before{
+  content:"";position:absolute;left:0;top:20px;width:20px;height:20px;
+  background:var(--red);
+  clip-path:polygon(38% 100%,0 62%,14% 48%,38% 72%,86% 10%,100% 24%);
+}
+.feat-list b{font-family:var(--heavy);font-weight:normal;text-transform:uppercase;letter-spacing:.05em;display:block;font-size:15px}
+.feat-list span{color:var(--gray);font-size:15px}
+.dark figure{margin:0}
+.dark figure img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- pricing ---------- */
+.pricing table{width:100%;border-collapse:collapse;margin-top:32px;background:var(--paper)}
+.pricing th,.pricing td{padding:16px 18px;text-align:left;border-bottom:1px solid rgba(46,48,54,.12);font-size:15px}
+.pricing th{font:normal 13px/1.4 var(--heavy);letter-spacing:.06em;text-transform:uppercase;background:var(--charcoal);color:var(--cream)}
+.pricing td.price{font-family:var(--heavy);color:var(--red);white-space:nowrap}
+.pricing .table-note{font-size:14px;color:var(--gray-mid);margin-top:14px}
+.eval-callout{background:var(--paper);border-left:4px solid var(--red);padding:22px 26px;margin-top:36px;font-size:15px}
+.eval-callout b{font-family:var(--heavy);font-weight:normal}
+
+/* ---------- proof ---------- */
+.coach{display:grid;grid-template-columns:minmax(260px,.9fr) 1.5fr;gap:48px;align-items:center;margin-bottom:56px}
+.coach img{width:100%;object-fit:cover}
+.coach .kicker{font:normal 14px/1.4 var(--heavy);letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:48px 0}
+blockquote{
+  margin:0;background:var(--paper);padding:30px 28px;border-top:4px solid var(--red);
+  font-size:16px;
+}
+blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--gray-mid)}
+.ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.ba-grid figure{margin:0;background:var(--paper)}
+.ba-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ba-grid figcaption{font:normal 13px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;padding:12px 14px}
+
+/* ---------- visit / hours ---------- */
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.hours{list-style:none;margin:20px 0;padding:0;font-size:15px}
+.hours li{display:flex;justify-content:space-between;max-width:22em;padding:7px 0;border-bottom:1px solid rgba(243,241,236,.12)}
+.hours li span:first-child{font-family:var(--heavy)}
+.visit address{font-style:normal;font-size:15px;line-height:1.7}
+.visit .map-link{color:var(--red);font-family:var(--heavy);text-decoration:none}
+.visit .map-link:hover{text-decoration:underline}
+
+/* ---------- footer ---------- */
+footer.site{background:var(--charcoal);color:var(--gray);padding:34px 0 110px;font-size:13px;border-top:1px solid rgba(243,241,236,.12)}
+footer.site .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;justify-content:space-between}
+footer.site a{color:var(--cream);text-decoration:none}
+
+/* ---------- sticky mobile call bar ---------- */
+.call-bar{
+  display:none;
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--red);
+  padding:14px 16px calc(14px + env(safe-area-inset-bottom));
+  text-align:center;
+  box-shadow:0 -6px 24px rgba(0,0,0,.3);
+}
+.call-bar a{
+  color:var(--cream);
+  font:normal 17px/1.3 var(--heavy);
+  text-decoration:none;letter-spacing:.02em;display:block;
+}
+@media (max-width:760px){
+  .call-bar{display:block}
+  body{padding-bottom:64px}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero .wrap,.dark .wrap,.visit .wrap{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+  .quotes{grid-template-columns:1fr}
+  .ba-grid{grid-template-columns:repeat(2,1fr)}
+  .coach{grid-template-columns:1fr;gap:28px}
+  section{padding:56px 0}
+  .hero{padding:40px 0 56px}
+}
+@media (max-width:480px){
+  .ba-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .lead-card{padding:28px 20px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "Lift STL",
+  "url": "https://www.lift-stl.com",
+  "telephone": "+13142963117",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8356 Musick Memorial Dr",
+    "addressLocality": "Brentwood",
+    "addressRegion": "MO",
+    "postalCode": "63144",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"06:00","closes":"19:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"17:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:00","closes":"14:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"14:00"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Lift STL home">
+      <!-- Official LIFT STL mark, lifted from the live site (inline SVG, brand red #E14747) -->
+      <svg viewBox="0 0 600 600" role="img" aria-label="Lift STL logo" xmlns="http://www.w3.org/2000/svg">
+        <g>
+          <path fill="#E14747" d="M159.173 368.758h56.055l46.523-206.965h-56.054l-46.524 206.965Z"/>
+          <path fill="#E14747" d="M300.005 0C134.575 0 0 134.583 0 300s134.575 300 300.005 300S600 465.417 600 300 465.425 0 300.005 0Zm202.573 161.793H280.673l-46.514 206.965h56.065l18.291-81.372h54.062l12.294-54.692h-54.062l3.644-16.209h93.027l-34.219 152.273h56.064l34.22-152.273h57.125a245.576 245.576 0 0 1 0 167.03H136.807l69.751-310.352a243.853 243.853 0 0 1 93.447-18.511c84.037.04 158.332 42.528 202.573 107.141Zm-360.985-48.935-60.84 270.657-4.005 18.02a245.003 245.003 0 0 1 64.885-288.667l-.04-.01Zm158.412 432.49c-84.097 0-158.342-42.488-202.573-107.121h405.146c-44.241 64.593-118.536 107.081-202.573 107.081v.04Z"/>
+          <path fill="#E14747" d="M250.628 481.866c-10.882-2.323-13.425-4.946-13.425-9.601v-.15c0-4.445 4.094-8.009 10.522-8.009a21.734 21.734 0 0 1 14.276 5.426l3.254-4.305a25.815 25.815 0 0 0-17.39-6.077c-9.391 0-16.249 5.717-16.249 13.496v.14c0 8.129 5.226 11.803 16.609 14.276 10.382 2.182 12.855 4.795 12.855 9.391v.11c0 4.875-4.375 8.409-11.012 8.409-6.848 0-11.794-2.332-16.96-7.008l-3.454 4.095a28.934 28.934 0 0 0 20.203 7.909c9.822 0 16.89-5.506 16.89-14.016v-.14c-.01-7.509-5.096-11.543-16.119-13.946Z"/>
+          <path fill="#E14747" d="M280.573 464.987h16.599v44.3h5.656v-44.3h16.609v-5.166h-38.864v5.166Z"/>
+          <path fill="#E14747" d="M342.524 459.821h-5.576v49.466h33.418v-5.156h-27.842v-44.31Z"/>
+        </g>
+      </svg>
+      <span>Lift STL</span>
+    </a>
+    <a class="header-call" href="tel:+13142963117"><span class="header-loc">Brentwood, MO &nbsp;·&nbsp; </span><strong>(314) 296-3117</strong></a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO + ABOVE-THE-FOLD LEAD FORM ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>St.&nbsp;Louis personal training that gets <span class="accent">results.</span></h1>
+        <p class="sub">One-on-one coaching at our private Brentwood gym — a custom plan built around your body, regular progress testing, and a trainer who actually answers your texts.</p>
+        <ul class="ticks">
+          <li>Custom programming &amp; regular evaluations</li>
+          <li>Bi-weekly body-fat testing</li>
+          <li>Top-tier equipment, never crowded</li>
+          <li>24/7 keycard access for members</li>
+        </ul>
+      </div>
+
+      <div class="lead-card">
+        <h2>Get your free day pass <span class="accent">&amp; tour</span></h2>
+        <p class="fine">No commitment, no sales pitch. Come see the gym, meet a trainer, get a workout in.</p>
+        <form class="lead-form" data-form-location="hero" novalidate>
+          <div class="form-fields">
+            <div class="field">
+              <label for="hero-name">Name</label>
+              <input id="hero-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="hero-email">Email</label>
+              <input id="hero-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="hero-phone">Phone</label>
+              <input id="hero-phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <button class="btn btn-dark btn-block" type="submit">Get My Free Day Pass &amp; Tour</button>
+            <p class="form-error" role="alert"></p>
+            <p class="form-note">Prefer to talk? Call <a href="tel:+13142963117">(314) 296-3117</a></p>
+          </div>
+          <div class="form-success" role="status">
+            <strong>You're in.</strong>
+            <p style="margin:8px 0 0">We'll text you shortly to set up your free tour and day pass.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <span>Private gym in Brentwood — off S. Hanley Rd &amp; Hwy 64</span>
+      <span>Staffed 7 days a week</span>
+      <span>Members get 24/7 keycard access</span>
+    </div>
+  </div>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="steps">
+    <div class="wrap">
+      <h2>How it <span class="accent">works.</span></h2>
+      <p style="max-width:42em">No surprises and no pressure — here's exactly what the first month looks like, including what it costs.</p>
+      <div class="steps-grid">
+        <div class="step free">
+          <span class="price-tag"><b>Free</b> · day passes normally $25</span>
+          <h3>Tour + Day Pass</h3>
+          <p>Come see the facility, meet the team, and train for a day on us. If it's not the right fit, no hard feelings.</p>
+        </div>
+        <div class="step">
+          <span class="price-tag"><b>$100</b> · one-time</span>
+          <h3>Custom Evaluation</h3>
+          <p>We start with a custom evaluation of you — goals, movement, body composition — and build your personal plan from it.</p>
+        </div>
+        <div class="step">
+          <span class="price-tag"><b>From $85</b> / session</span>
+          <h3>Train With Your Plan</h3>
+          <p>One-on-one sessions with your trainer, regular re-evaluations, and bi-weekly body-fat testing to prove it's working.</p>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:40px">
+        <a class="btn btn-dark" href="#bottom-form" data-cta>Get My Free Day Pass &amp; Tour</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT YOU GET (dark) ============ -->
+  <section class="dark">
+    <div class="wrap">
+      <div>
+        <h2>Training with the right <span class="accent">focus.</span></h2>
+        <ul class="feat-list">
+          <li><b>World-class trainers</b><span>Coaching from trainers who've worked with pro athletes — and beginners on Day #1.</span></li>
+          <li><b>Custom programming</b><span>A plan built from your evaluation, not a template — updated as you progress.</span></li>
+          <li><b>Regular body-fat testing</b><span>Bi-weekly measurements so progress is tracked, not guessed.</span></li>
+          <li><b>Text &amp; email communication</b><span>Questions between sessions answered in under 24 hours.</span></li>
+          <li><b>Top-tier equipment</b><span>A private, fully equipped gym — no waiting on racks.</span></li>
+        </ul>
+      </div>
+      <figure>
+        <img src="https://static.wixstatic.com/media/9fd553_a2dc7c20eb7e43b3b497b61afab38850~mv2.jpg/v1/fill/w_900,h_1100,al_c,q_80/lift-training.jpg" alt="Lift member back-squatting with a coach on the red turf at the Brentwood gym" loading="lazy" width="900" height="1100">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing">
+    <div class="wrap">
+      <h2>Straightforward <span class="accent">pricing.</span></h2>
+      <p style="max-width:42em">No hidden rates after you click. Every package includes one-on-one sessions with your trainer, and session packs include gym membership for the lengths shown.</p>
+      <table>
+        <thead>
+          <tr><th scope="col">Package</th><th scope="col">Per session</th><th scope="col">Includes membership</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>6-Pack (6 sessions)</td><td class="price">$100 / session</td><td>1 month</td></tr>
+          <tr><td>12-Pack (12 sessions)</td><td class="price">$95 / session</td><td>3 months</td></tr>
+          <tr><td>24-Pack (24 sessions)</td><td class="price">$90 / session</td><td>6 months</td></tr>
+          <tr><td>48-Pack (48 sessions)</td><td class="price">$85 / session</td><td>9 months</td></tr>
+          <tr><td>On/Off Campus (2 sessions / month + programming)</td><td class="price">$325 / month</td><td>Ongoing</td></tr>
+        </tbody>
+      </table>
+      <div class="eval-callout">
+        <b>The honest first step:</b> every training plan starts with a one-time <b>$100 custom evaluation</b> — goals, movement screen, and body composition — so your program is built on real data. But start with the free tour and day pass first; the evaluation only makes sense once you've seen the place.
+      </div>
+      <p style="text-align:center;margin-top:40px">
+        <a class="btn btn-dark" href="#bottom-form" data-cta>Get My Free Day Pass &amp; Tour</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PROOF (dark) ============ -->
+  <section class="dark" style="display:block">
+    <div class="wrap" style="display:block">
+      <div class="coach">
+        <img src="https://static.wixstatic.com/media/47b482_16703b7b7f21486cac0680f696219abe~mv2.jpg/v1/fill/w_800,h_900,al_c,q_80/lift-gym.jpg" alt="Member training with a curl bar at Lift STL" loading="lazy" width="800" height="900">
+        <div>
+          <p class="kicker">Your trainer</p>
+          <h2 style="font-size:clamp(30px,3.6vw,48px)">Eric Humes — Founder, <span class="accent">Lift&nbsp;STL</span></h2>
+          <p>A former three-sport athlete and collegiate baseball player, Eric has spent over a decade training major and minor league baseball players, Navy SEALs, high-school prospects, and NFL lineman Jake Long. He believes in investing the time up front to establish achievable goals — and sees himself as a teammate to his clients, not just a coach.</p>
+        </div>
+      </div>
+
+      <div class="quotes">
+        <blockquote>
+          <p>“What I like most about Eric is how specific he is with his approach. He customized a workout to help fix my imbalances which helped my performance.”</p>
+          <footer>— Cole Miller, Lift member</footer>
+        </blockquote>
+        <blockquote>
+          <p>“Working with Lift was the driving force that led me to finally achieving my goals. My weight loss journey is going on 5 years now and it has been a rollercoaster of losing a little bit of weight and putting it back on… I was able to learn from some of the top fitness experts in my city on ways to lose weight quickly and keep the muscle on.”</p>
+          <footer>— Ryan Finley, Lift member</footer>
+        </blockquote>
+      </div>
+
+      <h3 style="text-align:center">Every effort is <span class="accent">rewarded.</span></h3>
+      <!-- Real member transformations already published on lift-stl.com.
+           To add more, duplicate a <figure> and swap the image + name. -->
+      <div class="ba-grid">
+        <figure>
+          <img src="https://static.wixstatic.com/media/48c380_ebc540868343429695e5716568bcec2f~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80/rhett.jpg" alt="Rhett Mueller before and after training at Lift STL" loading="lazy" width="600" height="450">
+          <figcaption>Rhett Mueller</figcaption>
+        </figure>
+        <figure>
+          <img src="https://static.wixstatic.com/media/48c380_d98ca07f7496488d9b807ca378ef4ccf~mv2.png/v1/fill/w_600,h_450,al_c,q_80/seth.png" alt="Seth Buhman before and after training at Lift STL" loading="lazy" width="600" height="450">
+          <figcaption>Seth Buhman</figcaption>
+        </figure>
+        <figure>
+          <img src="https://static.wixstatic.com/media/48c380_c93f19c535324760b09ad74270ff59c2~mv2.png/v1/fill/w_600,h_450,al_c,q_80/aakarsh.png" alt="Aakarsh before and after training at Lift STL" loading="lazy" width="600" height="450">
+          <figcaption>Aakarsh</figcaption>
+        </figure>
+        <figure>
+          <img src="https://static.wixstatic.com/media/48c380_d2715d50fd6a49bab57008a23b47288d~mv2.png/v1/fill/w_600,h_450,al_c,q_80/eric12.png" alt="Eric's twelve-week before and after at Lift STL" loading="lazy" width="600" height="450">
+          <figcaption>Eric — 12 weeks</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="visit dark" style="border-top:1px solid rgba(243,241,236,.12)">
+    <div class="wrap">
+      <div>
+        <h2>Come see it <span class="accent">first.</span></h2>
+        <address>
+          <strong>Lift STL</strong><br>
+          8356 Musick Memorial Dr<br>
+          Brentwood, MO 63144<br>
+          Off S. Hanley Rd &amp; Highway 64<br><br>
+          <a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=8356+Musick+Memorial+Dr,+Brentwood,+MO+63144" target="_blank" rel="noopener">Get directions →</a><br><br>
+          <a class="map-link" href="tel:+13142963117">(314) 296-3117</a>
+        </address>
+      </div>
+      <div>
+        <h3>Staffed hours</h3>
+        <ul class="hours">
+          <li><span>Mon – Thu</span><span>6 AM – 7 PM</span></li>
+          <li><span>Friday</span><span>6 AM – 5 PM</span></li>
+          <li><span>Saturday</span><span>6 AM – 2 PM</span></li>
+          <li><span>Sunday</span><span>8 AM – 2 PM</span></li>
+        </ul>
+        <p style="color:var(--gray);font-size:15px">Members get <strong style="color:var(--cream)">24/7 keycard access</strong> — train on your schedule, not ours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOTTOM FORM ============ -->
+  <section id="bottom-form">
+    <div class="wrap" style="max-width:640px">
+      <h2 style="text-align:center">Ready for day <span class="accent">#1?</span></h2>
+      <p style="text-align:center">Grab your free day pass and tour — 30 seconds, three fields, no commitment.</p>
+      <div class="lead-card" style="box-shadow:0 14px 40px rgba(46,48,54,.18)">
+        <form class="lead-form" data-form-location="bottom" novalidate>
+          <div class="form-fields">
+            <div class="field">
+              <label for="bottom-name">Name</label>
+              <input id="bottom-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="bottom-email">Email</label>
+              <input id="bottom-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="bottom-phone">Phone</label>
+              <input id="bottom-phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <button class="btn btn-dark btn-block" type="submit">Get My Free Day Pass &amp; Tour</button>
+            <p class="form-error" role="alert"></p>
+            <p class="form-note">Prefer to talk? Call <a href="tel:+13142963117">(314) 296-3117</a></p>
+          </div>
+          <div class="form-success" role="status">
+            <strong>You're in.</strong>
+            <p style="margin:8px 0 0">We'll text you shortly to set up your free tour and day pass.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Lift-STL · 8356 Musick Memorial Dr, Brentwood, MO 63144</span>
+    <a href="tel:+13142963117">(314) 296-3117</a>
+  </div>
+</footer>
+
+<!-- Sticky tap-to-call bar (mobile only) -->
+<div class="call-bar">
+  <a href="tel:+13142963117">📞 Call Lift STL — (314) 296-3117</a>
+</div>
+
+<script>
+/* ================================================================
+   CONFIG — fill these in before launch (both are flagged in the
+   README as launch blockers):
+   ================================================================ */
+var CONFIG = {
+  /* Lead form endpoint. Expects a JSON POST:
+       { name, email, phone, source, page }
+     Options (pick one and confirm with the owner):
+       - Wix Velo HTTP function on the main site, e.g.
+         'https://www.lift-stl.com/_functions/leads'
+       - A Zapier/Make webhook that forwards to their CRM/email
+     Until this is set, submissions are stored nowhere — the page
+     shows the success state but logs a loud console error.       */
+  FORM_ENDPOINT: 'REPLACE_WITH_FORM_ENDPOINT',
+
+  /* Google Ads conversion actions — TWO separate actions so calls
+     and form leads can be valued/optimized independently.
+     Format: 'AW-XXXXXXXXX/ConversionLabel'                        */
+  ADS_CONVERSION_FORM_SUBMIT: 'AW-XXXXXXXXX/REPLACE_FORM_SUBMIT_LABEL',
+  ADS_CONVERSION_PHONE_CALL: 'AW-XXXXXXXXX/REPLACE_PHONE_CALL_LABEL'
+};
+
+function fireConversion(sendTo, params) {
+  if (typeof window.gtag === 'function' && sendTo.indexOf('REPLACE') === -1) {
+    window.gtag('event', 'conversion', Object.assign({ send_to: sendTo }, params || {}));
+  } else {
+    console.warn('[Lift LP] gtag not configured — conversion not sent:', sendTo);
+  }
+}
+
+/* ---- Conversion action #1: tel: clicks (every tap-to-call) ---- */
+document.addEventListener('click', function (e) {
+  var link = e.target.closest && e.target.closest('a[href^="tel:"]');
+  if (link) {
+    fireConversion(CONFIG.ADS_CONVERSION_PHONE_CALL);
+  }
+});
+
+/* ---- Conversion action #2: lead form submit success ---- */
+document.querySelectorAll('form.lead-form').forEach(function (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var errorEl = form.querySelector('.form-error');
+    errorEl.style.display = 'none';
+
+    if (!form.reportValidity()) return;
+
+    var payload = {
+      name: form.elements.name.value.trim(),
+      email: form.elements.email.value.trim(),
+      phone: form.elements.phone.value.trim(),
+      source: 'google-ads-personal-training-lp',
+      formLocation: form.dataset.formLocation,
+      page: location.href
+    };
+
+    var button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+
+    var submitted = CONFIG.FORM_ENDPOINT.indexOf('REPLACE') === -1
+      ? fetch(CONFIG.FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (!res.ok) throw new Error('Endpoint returned ' + res.status);
+        })
+      : Promise.resolve().then(function () {
+          console.error('[Lift LP] FORM_ENDPOINT not configured — this lead was NOT delivered anywhere:', payload);
+        });
+
+    submitted.then(function () {
+      form.classList.add('is-done');
+      fireConversion(CONFIG.ADS_CONVERSION_FORM_SUBMIT);
+    }).catch(function (err) {
+      button.disabled = false;
+      errorEl.textContent = 'Something went wrong sending that — please call (314) 296-3117 instead.';
+      errorEl.style.display = 'block';
+      console.error('[Lift LP] form submit failed:', err);
+    });
+  });
+});
+</script>
+</body>
+</html>
