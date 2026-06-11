@@ -320,7 +320,8 @@ form.is-done .form-success{display:block}
 .coach img{width:100%;object-fit:cover}
 .coach-creds{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
 .coach-creds li{font:normal 12.5px/1.3 var(--heavy);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--red);color:var(--cream);border-radius:999px;padding:7px 16px}
-.quotes{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:52px 0}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:52px 0}
+blockquote .result-line{display:block;margin-top:6px;color:var(--red);font-family:var(--heavy);font-size:13px;letter-spacing:.04em}
 blockquote{
   margin:0;background:var(--paper);color:var(--charcoal);padding:34px 30px 28px;border-top:4px solid var(--red);
   font-size:16px;position:relative;
@@ -331,7 +332,7 @@ blockquote::before{
 }
 blockquote p{position:relative}
 blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
-.ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
 .ba-grid figure{margin:0;background:var(--paper);color:var(--charcoal)}
 .ba-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .ba-grid figcaption{font:normal 13px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;padding:12px 14px}
@@ -354,7 +355,9 @@ blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spaci
 .faq .faq-a a{color:var(--red)}
 
 /* ---------- visit / hours ---------- */
-.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:center}
+.visit figure{margin:0}
+.visit figure img{width:100%;aspect-ratio:1;object-fit:cover;border-top:4px solid var(--red)}
 .hours{list-style:none;margin:20px 0;padding:0;font-size:15px}
 .hours li{display:flex;justify-content:space-between;max-width:22em;padding:7px 0;border-bottom:1px solid rgba(243,241,236,.12)}
 .hours li span:first-child{font-family:var(--heavy)}
@@ -461,7 +464,7 @@ footer.site a{color:var(--cream);text-decoration:none}
       <div>
         <p class="kicker">Private personal training gym · Brentwood, MO</p>
         <h1>St.&nbsp;Louis personal training that gets <span class="accent">results.</span></h1>
-        <p class="sub">Train one-on-one with the coach behind <b>MLB players, NFL linemen, and Navy SEALs</b>. A plan built from your evaluation, in a private Brentwood gym — prices published below.</p>
+        <p class="sub">Train one-on-one with the coach behind <b>MLB players, NFL linemen, and Navy SEALs</b> — the same evaluation-first coaching, applied to your goal: losing the weight, getting strong again, or your first day in a gym.</p>
         <ul class="ticks">
           <li>Custom plan from a real evaluation</li>
           <li>Bi-weekly body-fat testing</li>
@@ -522,7 +525,7 @@ footer.site a{color:var(--cream);text-decoration:none}
     <div class="wrap">
       <p class="kicker reveal">No surprises, no pressure</p>
       <h2 class="reveal">How it <span class="accent">works.</span></h2>
-      <p class="reveal" style="max-width:42em">The entire process — every step, every price — before you ever walk in.</p>
+      <p class="reveal" style="max-width:42em">The entire process — every step, every price — before you ever walk in. Built for busy professionals, first-timers, and athletes alike.</p>
       <div class="steps-grid">
         <div class="step free reveal">
           <span class="price-tag"><b>Free</b> · day passes normally $25</span>
@@ -554,7 +557,7 @@ footer.site a{color:var(--cream);text-decoration:none}
         <div><b><i>A</i>History &amp; goals</b><span>Where you've been, where you actually want to go — it frames everything else.</span></div>
         <div><b><i>B</i>Movement screen</b><span>How you move under load, and the imbalances worth fixing first.</span></div>
         <div><b><i>C</i>Body composition</b><span>A real baseline, re-tested bi-weekly so progress is measured, not guessed.</span></div>
-        <div><b><i>D</i>Your plan</b><span>Programming built from your data — and rebuilt as your numbers move.</span></div>
+        <div><b><i>D</i>Your plan</b><span>Programming built from your data — losing weight, adding strength, or both — and rebuilt as your numbers move.</span></div>
       </div>
       <p class="center" style="margin-top:44px">
         <a class="btn btn-dark" href="#bottom-form" data-cta>Get My Free Day Pass &amp; Tour</a>
@@ -676,7 +679,7 @@ footer.site a{color:var(--cream);text-decoration:none}
   <section class="dark wm" data-watermark="Proof">
     <div class="wrap">
       <div class="coach">
-        <img class="reveal" src="https://static.wixstatic.com/media/47b482_16703b7b7f21486cac0680f696219abe~mv2.jpg/v1/fill/w_800,h_900,al_c,q_80/lift-gym.jpg" alt="Member training with a curl bar at Lift STL" loading="lazy" width="800" height="900">
+        <img class="reveal" src="https://static.wixstatic.com/media/48c380_881fb9504fe1462985d6bf7a5f7f5a86~mv2.jpg/v1/fill/w_800,h_900,al_c,q_80/eric-humes-family.jpg" alt="Eric Humes with his family on the red turf at Lift STL" loading="lazy" width="800" height="900">
         <div>
           <p class="kicker reveal">Your trainer</p>
           <h2 class="reveal" style="font-size:clamp(30px,3.6vw,48px)">Eric Humes — Founder, <span class="accent">Lift&nbsp;STL</span></h2>
@@ -699,12 +702,28 @@ footer.site a{color:var(--cream);text-decoration:none}
           <p>“Working with Lift was the driving force that led me to finally achieving my goals… I was able to learn from some of the top fitness experts in my city on ways to lose weight quickly and keep the muscle on.”</p>
           <footer>— Ryan Finley, Lift member</footer>
         </blockquote>
+        <blockquote class="reveal">
+          <p>“In the past, I found trainers intimidating. I'm not a bodybuilder or a young athlete. Eric took the time… and developed a plan suited specifically for me.”</p>
+          <footer>— J. Glasgow, Lift member at 50<span class="result-line">−13.4 lbs · −6.9% body fat · +2.1 lbs muscle</span></footer>
+        </blockquote>
       </div>
 
       <h3 class="center reveal">Every effort is <span class="accent">rewarded.</span></h3>
       <!-- Real member transformations already published on lift-stl.com.
            To add more, duplicate a <figure> and swap the image + name. -->
       <div class="ba-grid">
+        <figure class="reveal">
+          <img src="https://static.wixstatic.com/media/9fd553_15f0b4df54554f19becc7beaf51d32a9~mv2.png/v1/fill/w_600,h_450,al_c,q_80/lift-member.jpg" alt="Lift member's before and after transformation" loading="lazy" width="600" height="450">
+          <figcaption>Lift member</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="https://static.wixstatic.com/media/9fd553_3ef4ce4b002b4d7fb7ea37618530c35d~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80/one-year.jpg" alt="Lift member's one-year before and after transformation" loading="lazy" width="600" height="450">
+          <figcaption>One year of progress</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="https://static.wixstatic.com/media/9fd553_c1f02465116946079b1fa3f4cc9e8f34~mv2.png/v1/fill/w_600,h_450,al_c,q_80/j-glasgow.jpg" alt="J. Glasgow's before and after at age 50" loading="lazy" width="600" height="450">
+          <figcaption>J. Glasgow — at 50</figcaption>
+        </figure>
         <figure class="reveal">
           <img src="https://static.wixstatic.com/media/48c380_ebc540868343429695e5716568bcec2f~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80/rhett.jpg" alt="Rhett Mueller before and after training at Lift STL" loading="lazy" width="600" height="450">
           <figcaption>Rhett Mueller</figcaption>
@@ -716,10 +735,6 @@ footer.site a{color:var(--cream);text-decoration:none}
         <figure class="reveal">
           <img src="https://static.wixstatic.com/media/48c380_c93f19c535324760b09ad74270ff59c2~mv2.png/v1/fill/w_600,h_450,al_c,q_80/aakarsh.jpg" alt="Aakarsh before and after training at Lift STL" loading="lazy" width="600" height="450">
           <figcaption>Aakarsh</figcaption>
-        </figure>
-        <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/48c380_d2715d50fd6a49bab57008a23b47288d~mv2.png/v1/fill/w_600,h_450,al_c,q_80/eric12.jpg" alt="Eric's twelve-week before and after at Lift STL" loading="lazy" width="600" height="450">
-          <figcaption>Eric — 12 weeks</figcaption>
         </figure>
       </div>
     </div>
@@ -781,6 +796,9 @@ footer.site a{color:var(--cream);text-decoration:none}
         </ul>
         <p class="reveal" style="color:var(--cream-soft);font-size:15px">Members get <strong style="color:var(--cream)">24/7 keycard access</strong> — train on your schedule, not ours.</p>
       </div>
+      <figure class="reveal">
+        <img src="https://static.wixstatic.com/media/9fd553_c901c808ec864e518e91f59daf2f35ba~mv2.jpeg/v1/fill/w_700,h_700,al_c,q_80/lift-floor.jpg" alt="Overhead view of a member lifting on the LIFT STL logo platform" loading="lazy" width="700" height="700">
+      </figure>
     </div>
   </section>
 
