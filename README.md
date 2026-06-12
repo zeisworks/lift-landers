@@ -20,10 +20,8 @@ The single page adapts to the device:
   swipe-scrubbed progress bar. Requires Chrome/Edge 115+ or Safari 26+;
   older engines get the static page.
 - **Everywhere**: the cinematic "Watch" section (the gym's own 60-second
-  evaluation explainer behind an oversized play button), the
-  drag-to-compare before/after slider (Wix CDN crop transforms split the
-  published composite into halves; an accessible `<input type=range>`
-  drives the wipe), and full `prefers-reduced-motion` support.
+  evaluation explainer behind an oversized play button) and full
+  `prefers-reduced-motion` support.
 
 ## Quality (Lighthouse, mobile emulation, June 2026)
 
@@ -41,7 +39,7 @@ npm install && npx playwright install chromium && npm test
 `test/smoke.mjs` serves the repo locally and verifies in headless
 Chromium (desktop + mobile emulation): clean load, motion gating, click-ID
 capture, phone validation, both form success paths, the honeypot, the
-compare slider, video playback, the call bar, and the carousel.
+video playback, the call bar, and the carousel.
 
 ## Brand tokens — extracted from the live site (not invented)
 
@@ -122,7 +120,7 @@ This page is built to win against that playbook rather than imitate it:
 
 - **Out-credential them**: the founder has trained MLB/MiLB players, Navy
   SEALs, and NFL lineman Jake Long (all from the live About page) — leads
-  the hero subhead, a red credibility strip, and coach credential chips.
+  the hero subhead and a red credibility strip.
 - **Weaponize transparency**: "Where the luxury clubs lose" comparison
   table (Lift vs. "typical big-box club" — deliberately unnamed and
   hedged with a footnote so every row stays defensible), a stats band
@@ -150,8 +148,8 @@ This page is built to win against that playbook rather than imitate it:
 - **Pricing in the open**: $100 evaluation + 6/12/24/48-packs
   ($100/$95/$90/$85 per session with included membership) + On/Off Campus
   $325/mo, in a plain table.
-- **Proof**: Eric Humes (founder) bio, verbatim Cole Miller & Ryan Finley
-  testimonials from the current PT page, real before/after grid.
+- **Proof**: verbatim member testimonials (Cole Miller, Ryan Finley,
+  J. Glasgow) and the real before/after gallery.
 - **One repeated next step**: every CTA is "Get My Free Day Pass & Tour"
   (phone call is the only intentional secondary path).
 - Real NAP and hours: 8356 Musick Memorial Dr, Brentwood, MO 63144 ·

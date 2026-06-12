@@ -76,11 +76,6 @@ const browser = await chromium.launch();
   check('honeypot silently done', await page.$eval('form[data-form-location=bottom]',
     f => f.classList.contains('is-done')));
 
-  // drag-to-compare slider responds
-  await page.$eval('.ba-range', el => { el.value = 80; el.dispatchEvent(new Event('input')); });
-  check('compare slider responds', await page.$eval('.ba-slider',
-    el => el.style.getPropertyValue('--cut') === '80%'));
-
   // play button starts the video
   await page.$eval('.video-shell .play-btn', btn => btn.click());
   await page.waitForTimeout(700);
