@@ -22,11 +22,30 @@ identical content, offer, forms, and tracking — with scroll-driven scenes:
   across between acts; window-effect image bands; count-up stats; red
   scroll-progress bar.
 
-All motion is transform/opacity-only (one rAF per scroll frame, offscreen
-culling). `overflow-x:clip` (not `hidden`) keeps the wide layers contained
-without breaking `position:sticky`. Motion activates only on fine-pointer,
-no-reduced-motion, >980px viewports — touch devices, small screens, and
-`prefers-reduced-motion` users get the static layout.
+All desktop motion is transform/opacity-only (one rAF per scroll frame,
+offscreen culling). `overflow-x:clip` (not `hidden`) keeps the wide layers
+contained without breaking `position:sticky`.
+
+**Mobile (≤980px) gets its own native motion experience** built on CSS
+scroll-driven animations (`animation-timeline: scroll()/view()`), which run
+on the compositor thread and stay smooth during touch flings — something JS
+scroll handlers physically can't do on iOS. Behind
+`@supports (animation-timeline: scroll())` + `prefers-reduced-motion:
+no-preference` (Chrome/Edge 115+, Safari 26+; older engines get the static
+page):
+
+- Pinned three-act "How it works" scrub (sticky + `view-timeline`)
+- Hero depth scrub (art zoom/drift + outlined LIFT word) over the first
+  two screens
+- Scroll-tied marquee brand words, photo settle-ins, scroll progress bar
+- Swipeable snap carousel for the six transformations with a
+  swipe-scrubbed progress bar (named `scroll-timeline` on the x axis)
+
+**Drag-to-compare before/after slider** (all devices, in the proof
+section): the member composite already published on the site is split into
+before/after halves *server-side* via chained Wix CDN transforms
+(`/v1/crop/...:/v1/fill/...`), wiped with `clip-path` driven by an
+accessible `<input type=range>` — keyboard and screen-reader friendly.
 
 ## Brand tokens — extracted from the live site (not invented)
 
