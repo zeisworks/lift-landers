@@ -7,13 +7,26 @@ static host or a subdomain (e.g. `go.lift-stl.com`), and independent of the
 Wix editor. It can also be attached to the Wix site via Wix's custom-domain
 subdomain routing or an embed if preferred.
 
-**`parallax.html`** is an A/B variant of the same page — identical content,
-offer, forms, and tracking — adding a transform-only parallax layer: hero
-depth (drifting dumbbell art + giant outlined Rift "LIFT"), counter-drifting
-section watermarks, two full-bleed image window bands, count-up stats, and a
-red scroll-progress bar. All motion is compositor-friendly (one rAF per
-scroll frame, offscreen culling) and is **fully disabled on touch devices
-and under `prefers-reduced-motion`**, where it renders as the static page.
+**`parallax.html`** is a scrollytelling A/B variant of the same page —
+identical content, offer, forms, and tracking — with scroll-driven scenes:
+
+- **Cinematic hero**: full-viewport, three depth layers (drifting/zooming
+  dumbbell art, counter-drifting giant outlined Rift "LIFT", content that
+  rises and dissolves as you scroll away), plus a micro tilt on the lead
+  card (disabled while typing).
+- **Pinned "How it works"**: the section pins for three scroll-scrubbed
+  acts — giant outlined 01/02/03 numerals crossfade beside each step card.
+- **Horizontal transformation gallery**: vertical scroll glides the six
+  before/afters sideways through a pinned viewport.
+- **Marquee brand words** ("RESULTS", "EVERY EFFORT IS REWARDED") slide
+  across between acts; window-effect image bands; count-up stats; red
+  scroll-progress bar.
+
+All motion is transform/opacity-only (one rAF per scroll frame, offscreen
+culling). `overflow-x:clip` (not `hidden`) keeps the wide layers contained
+without breaking `position:sticky`. Motion activates only on fine-pointer,
+no-reduced-motion, >980px viewports — touch devices, small screens, and
+`prefers-reduced-motion` users get the static layout.
 
 ## Brand tokens — extracted from the live site (not invented)
 
