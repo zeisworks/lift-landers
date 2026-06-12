@@ -1,0 +1,12 @@
+{
+  "name": "lift-landers",
+  "private": true,
+  "description": "Lift STL Google Ads landing page — standalone HTML, no build step",
+  "type": "module",
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

@@ -24,8 +24,17 @@
 </script>
 -->
 
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20600%20600%27%3E%3Cpath%20fill=%27%23E14747%27%20d=%27M159.173%20368.758h56.055l46.523-206.965h-56.054l-46.524%20206.965Z%27/%3E%3Cpath%20fill=%27%23E14747%27%20d=%27M300.005%200C134.575%200%200%20134.583%200%20300s134.575%20300%20300.005%20300S600%20465.417%20600%20300%20465.425%200%20300.005%200Zm202.573%20161.793H280.673l-46.514%20206.965h56.065l18.291-81.372h54.062l12.294-54.692h-54.062l3.644-16.209h93.027l-34.219%20152.273h56.064l34.22-152.273h57.125a245.576%20245.576%200%200%201%200%20167.03H136.807l69.751-310.352a243.853%20243.853%200%200%201%2093.447-18.511c84.037.04%20158.332%2042.528%20202.573%20107.141Zm-360.985-48.935-60.84%20270.657-4.005%2018.02a245.003%20245.003%200%200%201%2064.885-288.667l-.04-.01Zm158.412%20432.49c-84.097%200-158.342-42.488-202.573-107.121h405.146c-44.241%2064.593-118.536%20107.081-202.573%20107.081v.04Z%27/%3E%3C/svg%3E">
+<!-- TODO before launch: set the final URL once hosting is decided -->
+<!-- <link rel="canonical" href="REPLACE_WITH_FINAL_URL"> -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personal Trainer St. Louis | Lift STL — Free Day Pass &amp; Tour">
+<meta property="og:description" content="One-on-one personal training at a private Brentwood gym — evaluation-first coaching, published pricing, 24/7 access. Start with a free day pass and tour.">
+<meta property="og:image" content="https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_1200,h_630,al_c,q_80/lift-stl.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://static.wixstatic.com" crossorigin>
-<link rel="preload" as="image" href="https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/lift-dumbbells.jpg">
+<link rel="preload" as="image" media="(min-width:981px)" href="https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/lift-dumbbells.jpg">
+<link rel="preload" as="image" media="(max-width:980px)" href="https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_860,h_1200,al_c,q_80/lift-dumbbells-m.jpg">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://static.wixstatic.com/ufonts/fbc069_764d84d68ecc48ea8887be4b3fe693c4/woff2/file.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://static.wixstatic.com/ufonts/fbc069_2edb4eeb455a4da3871a535ac2b125eb/woff2/file.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://static.wixstatic.com/ufonts/2cec0a_c6acf09e4ba343babb5f0e0c71224cb8/woff2/file.woff2">
@@ -34,65 +43,70 @@
 /* ----------------------------------------------------------------
    Brand tokens — extracted from the live Wix theme on
    lift-stl.com (/, /personal-training, /join), June 2026.
-   Color vars mirror Wix --color_N; fonts are the site's own
-   uploaded files served from Wix's CDN.
    ---------------------------------------------------------------- */
-@font-face{ /* Rift Bold — site heading face (Wix --font_2..6) */
+@font-face{
   font-family:'Rift Bold';
   src:url('https://static.wixstatic.com/ufonts/fbc069_764d84d68ecc48ea8887be4b3fe693c4/woff2/file.woff2') format('woff2'),
       url('https://static.wixstatic.com/ufonts/fbc069_764d84d68ecc48ea8887be4b3fe693c4/woff/file.woff') format('woff');
   font-display:swap;
 }
-@font-face{ /* Rift Bold Italic — accent word in headings (Wix --font_0) */
+@font-face{
   font-family:'Rift Bold Italic';
   src:url('https://static.wixstatic.com/ufonts/fbc069_2edb4eeb455a4da3871a535ac2b125eb/woff2/file.woff2') format('woff2'),
       url('https://static.wixstatic.com/ufonts/fbc069_2edb4eeb455a4da3871a535ac2b125eb/woff/file.woff') format('woff');
   font-display:swap;
 }
-@font-face{ /* Avenir LT Std 55 Roman — body (Wix --font_7..9) */
+@font-face{
   font-family:'Avenir 55';
   src:url('https://static.wixstatic.com/ufonts/2cec0a_c6acf09e4ba343babb5f0e0c71224cb8/woff2/file.woff2') format('woff2'),
       url('https://static.wixstatic.com/ufonts/2cec0a_c6acf09e4ba343babb5f0e0c71224cb8/woff/file.woff') format('woff');
   font-display:swap;
 }
-@font-face{ /* Avenir LT Std 85 Heavy — buttons & labels */
+@font-face{
   font-family:'Avenir 85';
   src:url('https://static.wixstatic.com/ufonts/1c84a3_83aa59d0e76243d0955b5e8a09ecc730/woff2/file.woff2') format('woff2'),
       url('https://static.wixstatic.com/ufonts/1c84a3_83aa59d0e76243d0955b5e8a09ecc730/woff/file.woff') format('woff');
   font-display:swap;
 }
 
+@font-face{ /* metric-adjusted fallbacks to minimise font-swap layout shift */
+  font-family:'Avenir Fallback';src:local('Arial');size-adjust:96%;
+}
+@font-face{
+  font-family:'Rift Fallback';src:local('Arial Narrow'),local('Arial');size-adjust:84%;
+}
+
 :root{
-  --charcoal:#2E3036;      /* color_15 — dark sections, headings, body text */
-  --cream:#F3F1EC;         /* color_11/16 — page background */
-  --paper:#FAF9F8;         /* color_20 — light cards */
-  --red:#E14747;           /* color_17 — brand red (logo, accents, CTA) */
-  --red-deep:#8F3C3C;      /* color_18 — darker red shade */
-  --gray:#95979D;          /* color_13 — muted text on dark */
-  --gray-mid:#82848B;      /* color_14 */
+  --charcoal:#2E3036;
+  --cream:#F3F1EC;
+  --paper:#FAF9F8;
+  --red:#E14747;
+  --red-deep:#8F3C3C;
+  --gray:#95979D;
+  --gray-mid:#82848B;
   --white:#FFFFFF;
-  /* WCAG-AA tints of the brand inks for small secondary text */
   --ink-soft:rgba(46,48,54,.78);
   --cream-soft:rgba(243,241,236,.84);
-  --heading:'Rift Bold','Arial Narrow',Impact,sans-serif;
-  --heading-italic:'Rift Bold Italic','Arial Narrow',Impact,sans-serif;
-  --body:'Avenir 55','Helvetica Neue',Helvetica,Arial,sans-serif;
-  --heavy:'Avenir 85','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --heading:'Rift Bold','Rift Fallback',Impact,sans-serif;
+  --heading-italic:'Rift Bold Italic','Rift Fallback',Impact,sans-serif;
+  --body:'Avenir 55','Avenir Fallback',Helvetica,Arial,sans-serif;
+  --heavy:'Avenir 85','Avenir Fallback',Helvetica,Arial,sans-serif;
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+/* overflow-x:clip (not hidden) — clips the wide marquees/watermarks
+   without creating a scroll container, which would break the
+   position:sticky pinned scenes. */
+html{scroll-behavior:smooth;overflow-x:clip}
 body{
   margin:0;
   background:var(--cream);
   color:var(--charcoal);
   font:normal 16px/1.6 var(--body);
   -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
 }
 
-/* Type scale mirrors the site theme (96/64/48/40/32/24),
-   clamped for small screens. Headings are set in caps like the
-   live site; the .accent word is lowercase Rift Bold Italic. */
 h1,h2,h3{font-family:var(--heading);font-weight:normal;text-transform:uppercase;line-height:1.12;margin:0 0 .35em}
 h1{font-size:clamp(46px,7.2vw,96px)}
 h2{font-size:clamp(36px,5vw,64px)}
@@ -104,8 +118,6 @@ img{max-width:100%;display:block}
 
 :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:2px}
 
-/* Buttons — pill (Wix --rd:999px), 2px border, Avenir 85 Heavy,
-   0.4s ease transitions, exactly as on the live site. */
 .btn{
   display:inline-block;
   font:normal 16px/1.4 var(--heavy);
@@ -118,23 +130,20 @@ img{max-width:100%;display:block}
   cursor:pointer;
   transition:background-color .4s ease,border-color .4s ease,color .4s ease;
 }
-/* Cream label (not the site's red-on-charcoal) for WCAG AA contrast;
-   the red border + red hover fill keep the brand pattern. */
 .btn-dark{background:var(--charcoal);color:var(--cream)}
-.btn-dark:hover{background:var(--red);color:var(--cream)}
-.btn-solid{background:var(--red);color:var(--cream)}
+.btn-dark:hover{background:var(--red-deep);border-color:var(--red-deep);color:var(--cream)}
+.btn-solid{background:var(--red-deep);border-color:var(--red-deep);color:var(--cream)}
 .btn-solid:hover{background:var(--charcoal);border-color:var(--charcoal);color:var(--cream)}
 .btn-block{display:block;width:100%}
 .btn-sm{padding:10px 24px;font-size:14px}
 
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-section{padding:84px 0;position:relative;overflow:hidden}
+section{padding:84px 0;position:relative}
 
-/* Oversized Rift watermark behind section headings — pure brand
-   ink (charcoal/cream at low alpha), set via data-watermark. */
 .wm::before{
-  content:attr(data-watermark);
-  position:absolute;top:6px;left:50%;transform:translateX(-50%);
+  content:attr(data-watermark) / "";
+  position:absolute;top:6px;left:50%;
+  transform:translateX(-50%) translateY(var(--plxY,0px));
   font-family:var(--heading);text-transform:uppercase;white-space:nowrap;
   font-size:clamp(110px,18vw,240px);line-height:1;
   color:rgba(46,48,54,.05);
@@ -142,15 +151,106 @@ section{padding:84px 0;position:relative;overflow:hidden}
 }
 .dark.wm::before{color:rgba(243,241,236,.045)}
 
-.kicker{font:normal 14px/1.4 var(--heavy);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
+/* 19px bold = WCAG large text, so brand red passes 3:1 on both grounds */
+.kicker{font:normal 19px/1.3 var(--heavy);letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
 .center{text-align:center}
 
-/* Scroll-reveal (disabled entirely under prefers-reduced-motion
-   and when JS doesn't run). */
 .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
 .js .reveal.in{opacity:1;transform:none}
 
-/* ---------- header ---------- */
+/* ================================================================
+   MOTION LAYER — every rule below activates only under body.motion
+   (set by JS on fine-pointer, no-reduced-motion, >980px screens).
+   Without it the page lays out exactly like the static variant.
+   ================================================================ */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--red);transform-origin:0 50%;transform:scaleX(0);z-index:60;pointer-events:none;display:none}
+body.motion .progress{display:block}
+
+[data-plx]{transform:translate3d(0,var(--ty,0px),0)}
+body.motion [data-plx]{will-change:transform}
+
+/* ---- hero (cinematic) ---- */
+.hero{
+  background:var(--charcoal);
+  color:var(--cream);
+  padding:64px 0 84px;
+  position:relative;overflow:hidden;
+}
+body.motion .hero{min-height:100svh;display:flex;align-items:center;padding:40px 0}
+.hero-art{
+  position:absolute;left:0;right:0;top:-16%;bottom:-16%;z-index:0;
+  background:url('https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/lift-dumbbells.jpg') center/cover no-repeat;
+  transform:translate3d(0,var(--ty,0px),0) scale(var(--sc,1));
+}
+.hero-art::after{content:"";position:absolute;inset:0;background:rgba(46,48,54,.88);mix-blend-mode:multiply}
+.hero-word{
+  position:absolute;z-index:0;left:50%;top:46%;
+  transform:translate(-50%,-50%) translateY(var(--ty,0px));
+  font-family:var(--heading);font-size:clamp(200px,34vw,560px);line-height:1;
+  text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px rgba(243,241,236,.08);
+  pointer-events:none;user-select:none;white-space:nowrap;
+}
+.hero .wrap{position:relative;z-index:1;width:100%}
+.hero-exit{transform:translate3d(0,var(--ty,0px),0);opacity:var(--op,1)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,1fr);gap:56px;align-items:center}
+.hero .kicker{color:var(--red)}
+.hero p.sub{font-size:18px;max-width:32em;color:var(--cream)}
+.hero p.sub b{font-family:var(--heavy);font-weight:normal}
+.hero ul.ticks{list-style:none;margin:26px 0 0;padding:0;font-family:var(--heavy);font-size:15px}
+.hero ul.ticks li{padding:6px 0 6px 32px;position:relative}
+.hero ul.ticks li::before{
+  content:"";position:absolute;left:0;top:9px;width:18px;height:18px;
+  background:var(--red);
+  clip-path:polygon(38% 100%,0 62%,14% 48%,38% 72%,86% 10%,100% 24%);
+}
+.scroll-cue{display:none}
+body.motion .scroll-cue{
+  display:block;position:absolute;left:50%;bottom:22px;z-index:1;transform:translateX(-50%);
+  font:normal 11px/1.4 var(--heavy);letter-spacing:.3em;text-transform:uppercase;color:var(--cream-soft);
+  animation:cue 2.2s ease-in-out infinite;
+}
+@keyframes cue{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ---- lead form card ---- */
+.lead-card{
+  background:var(--paper);
+  color:var(--charcoal);
+  padding:36px 32px;
+  border-top:6px solid var(--red);
+  box-shadow:0 18px 50px rgba(0,0,0,.35);
+}
+body.motion .lead-card{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out}
+.lead-card h2{font-size:clamp(28px,2.6vw,38px);line-height:1.12}
+.lead-card p.fine{font-size:14px;color:var(--ink-soft);margin-bottom:20px}
+.field{margin-bottom:16px}
+.field label{display:block;font:normal 13px/1.4 var(--heavy);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.field input{
+  width:100%;
+  font:normal 16px/1.4 var(--body);
+  color:var(--charcoal);
+  background:var(--white);
+  border:1px solid var(--gray);
+  border-radius:2px;
+  padding:13px 14px;
+}
+.field input:focus-visible{outline-offset:0}
+.next-steps{list-style:none;margin:18px 0 0;padding:14px 0 0;border-top:1px solid rgba(46,48,54,.1);font-size:13px;color:var(--ink-soft);display:flex;gap:6px;justify-content:space-between;text-align:center}
+.next-steps li{flex:1}
+.next-steps b{display:block;font-family:var(--heavy);font-weight:normal;color:var(--charcoal);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.form-note{font-size:13px;color:var(--ink-soft);margin:14px 0 0;text-align:center}
+.consent{font-size:12px;line-height:1.55;color:var(--ink-soft);margin:12px 0 0;text-align:center}
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.form-success{
+  display:none;
+  background:var(--charcoal);color:var(--cream);
+  padding:24px;border-radius:2px;text-align:center;
+}
+.form-success strong{color:var(--red);font-family:var(--heavy)}
+form.is-done .form-fields{display:none}
+form.is-done .form-success{display:block}
+.form-error{display:none;color:var(--red-deep);font-size:14px;margin-top:10px;text-align:center}
+
+/* ---- header ---- */
 header.site{
   background:var(--charcoal);
   color:var(--cream);
@@ -179,83 +279,31 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
   .header-call .header-loc{display:none}
 }
 
-/* ---------- hero ---------- */
-.hero{
-  /* LIFT-branded dumbbell rack — the homepage hero video's poster frame */
-  background:var(--charcoal) url('https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/lift-dumbbells.jpg') center/cover no-repeat;
-  background-blend-mode:multiply;
-  background-color:rgba(46,48,54,.88);
-  color:var(--cream);
-  padding:64px 0 84px;
-  overflow:visible;
-}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,1fr);gap:56px;align-items:center}
-.hero .kicker{color:var(--red)}
-.hero p.sub{font-size:18px;max-width:32em;color:var(--cream)}
-.hero p.sub b{font-family:var(--heavy);font-weight:normal}
-.hero ul.ticks{list-style:none;margin:26px 0 0;padding:0;font-family:var(--heavy);font-size:15px}
-.hero ul.ticks li{padding:6px 0 6px 32px;position:relative}
-.hero ul.ticks li::before{
-  content:"";position:absolute;left:0;top:9px;width:18px;height:18px;
-  background:var(--red);
-  clip-path:polygon(38% 100%,0 62%,14% 48%,38% 72%,86% 10%,100% 24%);
-}
-
-/* ---------- lead form card ---------- */
-.lead-card{
-  background:var(--paper);
-  color:var(--charcoal);
-  padding:36px 32px;
-  border-top:6px solid var(--red);
-  box-shadow:0 18px 50px rgba(0,0,0,.35);
-}
-.lead-card h2{font-size:clamp(28px,2.6vw,38px);line-height:1.12}
-.lead-card p.fine{font-size:14px;color:var(--ink-soft);margin-bottom:20px}
-.field{margin-bottom:16px}
-.field label{display:block;font:normal 13px/1.4 var(--heavy);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
-.field input{
-  width:100%;
-  font:normal 16px/1.4 var(--body);
-  color:var(--charcoal);
-  background:var(--white);
-  border:1px solid var(--gray);
-  border-radius:2px;
-  padding:13px 14px;
-}
-.field input:focus-visible{outline-offset:0}
-.next-steps{list-style:none;margin:18px 0 0;padding:14px 0 0;border-top:1px solid rgba(46,48,54,.1);font-size:13px;color:var(--ink-soft);display:flex;gap:6px;justify-content:space-between;text-align:center}
-.next-steps li{flex:1}
-.next-steps b{display:block;font-family:var(--heavy);font-weight:normal;color:var(--charcoal);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
-.form-note{font-size:13px;color:var(--ink-soft);margin:14px 0 0;text-align:center}
-.consent{font-size:12px;line-height:1.55;color:var(--ink-soft);margin:12px 0 0;text-align:center}
-/* Honeypot — visually removed, ignored by humans, filled by bots */
-.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.form-success{
-  display:none;
-  background:var(--charcoal);color:var(--cream);
-  padding:24px;border-radius:2px;text-align:center;
-}
-.form-success strong{color:var(--red);font-family:var(--heavy)}
-form.is-done .form-fields{display:none}
-form.is-done .form-success{display:block}
-.form-error{display:none;color:var(--red-deep);font-size:14px;margin-top:10px;text-align:center}
-
-/* ---------- credibility strip ---------- */
-.strip{background:var(--red);color:var(--cream);padding:22px 0}
+/* ---- credibility strip ---- */
+.strip{background:var(--red-deep);color:var(--cream);padding:22px 0;position:relative;z-index:2}
 .strip .wrap{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;align-items:baseline;text-align:center}
-.strip .strip-label{font:normal 13px/1.4 var(--heavy);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.strip .strip-label{font:normal 19px/1.3 var(--heavy);letter-spacing:.12em;text-transform:uppercase}
 .strip .strip-names{font-family:var(--heading);font-size:clamp(20px,2.4vw,28px);text-transform:uppercase;letter-spacing:.03em}
 
-/* ---------- stats band ---------- */
-.stats{background:var(--charcoal);color:var(--cream);padding:54px 0}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center}
-.stat b{display:block;font-family:var(--heading);font-weight:normal;font-size:clamp(40px,4.6vw,64px);line-height:1;color:var(--red)}
-.stat span{font:normal 13px/1.5 var(--heavy);letter-spacing:.08em;text-transform:uppercase;color:var(--cream-soft);display:block;margin-top:8px}
-@media (max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr;gap:34px 16px}}
+/* ---- marquee words (motion only) ---- */
+.marq{display:none}
+body.motion .marq{
+  display:block;overflow:hidden;padding:34px 0;background:var(--cream);
+}
+body.motion .marq span::before{content:attr(data-text) / ""}
+body.motion .marq span{
+  display:inline-block;white-space:nowrap;
+  font-family:var(--heading);text-transform:uppercase;line-height:1;
+  font-size:clamp(90px,12vw,170px);
+  color:transparent;-webkit-text-stroke:1.5px rgba(46,48,54,.18);
+  transform:translate3d(var(--tx,0px),0,0);will-change:transform;
+}
+body.motion .marq .solid{color:var(--red);-webkit-text-stroke:0}
 
-/* ---------- how it works ---------- */
+/* ---- pinned steps scene ---- */
 .steps{counter-reset:step}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:42px}
+.scene-sticky{position:relative}
+.step-panels{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:42px}
 .step{background:var(--paper);padding:32px 28px;border-top:4px solid var(--charcoal)}
 .step.free{border-top-color:var(--red)}
 .step::before{
@@ -264,14 +312,12 @@ form.is-done .form-success{display:block}
 }
 .step h3{font-size:24px}
 .step .price-tag{font-family:var(--heavy);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:10px}
-.step .price-tag b{color:var(--red)}
-
-/* ---------- explainer video + evaluation anatomy ---------- */
+.step .price-tag b{color:var(--red-deep)}
+/* ---- explainer video + eval grid ---- */
 .explainer{margin:56px auto 0;max-width:880px}
 .explainer video{width:100%;height:auto;display:block;background:var(--charcoal);border-top:6px solid var(--red)}
 .explainer figcaption{font:normal 13px/1.5 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);text-align:center;padding:12px 0 0}
 /* cinematic video shell with oversized play button */
-.watch .explainer{max-width:none;margin:0}
 .video-shell{position:relative;background:#000;border-top:6px solid var(--red);box-shadow:0 26px 70px rgba(0,0,0,.5)}
 .video-shell video{width:100%;height:auto;display:block}
 .play-btn{
@@ -301,12 +347,19 @@ form.is-done .form-success{display:block}
 .eval-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(46,48,54,.12);max-width:880px;margin:34px auto 0}
 .eval-grid div{background:var(--cream);padding:20px 18px}
 .eval-grid b{font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:6px}
-.eval-grid b i{font-family:var(--heading);font-style:normal;color:var(--red);margin-right:6px}
+.eval-grid b i{font-family:var(--heading);font-style:normal;color:var(--red-deep);margin-right:6px}
 .eval-grid span{font-size:13.5px;color:var(--ink-soft);line-height:1.5;display:block}
 @media (max-width:860px){.eval-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.eval-grid{grid-template-columns:1fr}}
 
-/* ---------- comparison table ---------- */
+/* ---- stats band ---- */
+.stats{background:var(--charcoal);color:var(--cream);padding:54px 0;position:relative;overflow:hidden}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center}
+.stat b{display:block;font-family:var(--heading);font-weight:normal;font-size:clamp(40px,4.6vw,64px);line-height:1;color:var(--red)}
+.stat span{font:normal 13px/1.5 var(--heavy);letter-spacing:.08em;text-transform:uppercase;color:var(--cream-soft);display:block;margin-top:8px}
+@media (max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr;gap:34px 16px}}
+
+/* ---- comparison ---- */
 .compare-wrap{overflow-x:auto;margin-top:42px}
 .compare{width:100%;border-collapse:collapse;background:var(--paper);min-width:640px}
 .compare th,.compare td{padding:18px 20px;border-bottom:1px solid rgba(46,48,54,.1);text-align:left;font-size:15px;vertical-align:top}
@@ -320,7 +373,17 @@ form.is-done .form-success{display:block}
 .compare td.col-box{color:var(--ink-soft)}
 .compare-note{font-size:13px;color:var(--ink-soft);margin-top:14px}
 
-/* ---------- features (dark) ---------- */
+/* ---- full-bleed window bands ---- */
+.band{position:relative;overflow:hidden;padding:150px 0;color:var(--cream);text-align:center}
+.band-img{position:absolute;left:0;right:0;top:-22%;bottom:-22%;background:center/cover no-repeat;z-index:0;transform:translate3d(0,var(--ty,0px),0)}
+.band-img::after{content:"";position:absolute;inset:0;background:rgba(46,48,54,.72)}
+.band .wrap{position:relative;z-index:1}
+body.motion .band .wrap{transform:scale(var(--sc,1));opacity:var(--op,1);will-change:transform,opacity}
+.band h2{margin-bottom:.2em}
+.band p{max-width:36em;margin-left:auto;margin-right:auto;color:var(--cream-soft)}
+@media (max-width:760px){.band{padding:90px 0}}
+
+/* ---- features (dark) ---- */
 .dark{background:var(--charcoal);color:var(--cream)}
 .dark .wrap.cols{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .feat-list{list-style:none;margin:28px 0 0;padding:0}
@@ -334,22 +397,22 @@ form.is-done .form-success{display:block}
 .feat-list span{color:var(--cream-soft);font-size:15px}
 .dark figure{margin:0}
 .dark figure img{width:100%;height:100%;object-fit:cover}
+body.motion .feat-img{transform:translate3d(0,var(--ty,0px),0);will-change:transform}
 
-/* ---------- pricing ---------- */
+/* ---- pricing ---- */
 .pricing table{width:100%;border-collapse:collapse;margin-top:32px;background:var(--paper)}
 .pricing th,.pricing td{padding:16px 18px;text-align:left;border-bottom:1px solid rgba(46,48,54,.12);font-size:15px}
 .pricing thead th{font:normal 13px/1.4 var(--heavy);letter-spacing:.06em;text-transform:uppercase;background:var(--charcoal);color:var(--cream)}
-.pricing td.price{font-family:var(--heavy);color:var(--red);white-space:nowrap}
+.pricing td.price{font-family:var(--heavy);color:var(--red-deep);white-space:nowrap}
 .eval-callout{background:var(--paper);border-left:4px solid var(--red);padding:22px 26px;margin-top:36px;font-size:15px}
 .eval-callout b{font-family:var(--heavy);font-weight:normal}
 
-/* ---------- proof ---------- */
+/* ---- proof ---- */
 .coach{display:grid;grid-template-columns:minmax(260px,.9fr) 1.5fr;gap:48px;align-items:center;margin-bottom:60px}
 .coach img{width:100%;object-fit:cover}
 .coach-creds{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
 .coach-creds li{font:normal 12.5px/1.3 var(--heavy);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--red);color:var(--cream);border-radius:999px;padding:7px 16px}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:52px 0}
-blockquote .result-line{display:block;margin-top:6px;color:var(--red);font-family:var(--heavy);font-size:13px;letter-spacing:.04em}
 blockquote{
   margin:0;background:var(--paper);color:var(--charcoal);padding:34px 30px 28px;border-top:4px solid var(--red);
   font-size:16px;position:relative;
@@ -360,14 +423,31 @@ blockquote::before{
 }
 blockquote p{position:relative}
 blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
-.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
-.ba-grid figure{margin:0;background:var(--paper);color:var(--charcoal)}
-.ba-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.ba-grid figcaption{font:normal 13px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;padding:12px 14px}
-@media (max-width:980px){.ba-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:480px){.ba-grid{grid-template-columns:1fr 1fr;gap:10px}}
+blockquote .result-line{display:block;margin-top:6px;color:var(--red-deep);font-family:var(--heavy);font-size:13px;letter-spacing:.04em}
 
-/* ---------- FAQ ---------- */
+/* ---- horizontal transformation gallery ---- */
+.gal-track{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.gal-track figure{margin:0;background:var(--paper);color:var(--charcoal)}
+.gal-track img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.gal-track figcaption{font:normal 13px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;padding:12px 14px}
+@media (max-width:980px){.gal-track{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.gal-track{grid-template-columns:1fr 1fr;gap:10px}}
+
+.scene-gal{padding-bottom:84px}
+body.motion .scene-gal{height:280vh;padding-bottom:0}
+body.motion .scene-gal .scene-sticky{
+  position:sticky;top:0;height:100vh;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;
+}
+body.motion .scene-gal .gal-head{text-align:center;margin-bottom:40px}
+body.motion .gal-track{
+  display:flex;grid-template-columns:none;gap:28px;width:max-content;
+  padding:0 8vw;margin-top:0;
+  transform:translate3d(var(--tx,0px),0,0);will-change:transform;
+}
+body.motion .gal-track figure{width:clamp(360px,32vw,470px);flex:none;box-shadow:0 16px 44px rgba(0,0,0,.35)}
+
+/* ---- FAQ ---- */
 .faq{max-width:820px;margin:42px auto 0}
 .faq details{background:var(--paper);border-bottom:1px solid rgba(46,48,54,.12)}
 .faq details:first-of-type{border-top:4px solid var(--charcoal)}
@@ -382,7 +462,7 @@ blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spaci
 .faq .faq-a{padding:0 24px 22px;font-size:15px;color:var(--ink-soft)}
 .faq .faq-a a{color:var(--red)}
 
-/* ---------- visit / hours ---------- */
+/* ---- visit / hours ---- */
 .visit .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:center}
 .visit figure{margin:0}
 .visit figure img{width:100%;aspect-ratio:1;object-fit:cover;border-top:4px solid var(--red)}
@@ -393,23 +473,23 @@ blockquote footer{margin-top:14px;font:normal 14px/1.4 var(--heavy);letter-spaci
 .visit .map-link{color:var(--red);font-family:var(--heavy);text-decoration:none}
 .visit .map-link:hover{text-decoration:underline}
 
-/* ---------- footer ---------- */
+/* ---- footer ---- */
 footer.site{background:var(--charcoal);color:var(--cream-soft);padding:34px 0 110px;font-size:13px;border-top:1px solid rgba(243,241,236,.12)}
 footer.site .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;justify-content:space-between}
 footer.site a{color:var(--cream);text-decoration:none}
 
-/* ---------- sticky mobile call bar ---------- */
+/* ---- sticky mobile call bar ---- */
 .call-bar{
   display:none;
   position:fixed;left:0;right:0;bottom:0;z-index:50;
-  background:var(--red);
+  background:var(--red-deep);
   padding:14px 16px calc(14px + env(safe-area-inset-bottom));
   text-align:center;
   box-shadow:0 -6px 24px rgba(0,0,0,.3);
 }
 .call-bar a{
   color:var(--cream);
-  font:normal 17px/1.3 var(--heavy);
+  font:normal 19px/1.3 var(--heavy);
   text-decoration:none;letter-spacing:.02em;display:block;
 }
 @media (max-width:760px){
@@ -417,17 +497,109 @@ footer.site a{color:var(--cream);text-decoration:none}
   body{padding-bottom:64px}
 }
 
-/* ---------- responsive ---------- */
+/* ---- responsive ---- */
 #bottom-form{scroll-margin-top:90px}
 @media (max-width:980px){
   .hero .wrap,.dark .wrap.cols,.visit .wrap{grid-template-columns:1fr}
-  .steps-grid{grid-template-columns:1fr}
+  .step-panels{grid-template-columns:1fr}
   .quotes{grid-template-columns:1fr}
   .coach{grid-template-columns:1fr;gap:28px}
   section{padding:60px 0}
   .hero{padding:40px 0 56px}
   .stats .wrap{grid-template-columns:1fr 1fr}
 }
+
+/* ---- drag-to-compare before/after slider (all devices) ---- */
+.ba-slider{
+  position:relative;width:clamp(260px,70vw,340px);aspect-ratio:1/2;
+  margin:0 auto;overflow:hidden;
+  border-top:4px solid var(--red);box-shadow:0 18px 50px rgba(0,0,0,.4);
+  background:var(--charcoal);
+}
+.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-slider .ba-after{clip-path:inset(0 0 0 var(--cut,50%))}
+.ba-divider{
+  position:absolute;top:0;bottom:0;left:var(--cut,50%);width:2px;margin-left:-1px;
+  background:var(--red);pointer-events:none;
+}
+.ba-divider::after{
+  content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:44px;height:44px;border-radius:50%;background:var(--red);color:var(--cream);
+  font:normal 16px/44px var(--heavy);text-align:center;letter-spacing:2px;
+  box-shadow:0 4px 14px rgba(0,0,0,.4);
+}
+.ba-range{
+  position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;
+  cursor:ew-resize;-webkit-appearance:none;appearance:none;touch-action:pan-y;
+}
+.ba-cap{font:normal 13px/1.5 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--cream-soft);text-align:center;margin:14px 0 0}
+
+/* ---- mobile carousel for transformations (≤980px) ---- */
+.gal-progress{display:none}
+@media (max-width:980px){
+  .gal-track{
+    display:flex;grid-template-columns:none;gap:14px;margin-top:28px;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:6px 24px 14px;scrollbar-width:none;
+  }
+  .gal-track::-webkit-scrollbar{display:none}
+  .gal-track figure{width:78vw;max-width:340px;flex:none;scroll-snap-align:center}
+}
+
+/* ================================================================
+   MOBILE MOTION — CSS scroll-driven animations (compositor-thread,
+   smooth during touch flings). Progressive enhancement: phones on
+   engines without animation-timeline simply get the static page.
+   Desktop (>980px) keeps the JS film; none of this applies there.
+   ================================================================ */
+@keyframes m-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes m-hero-art{from{transform:translateY(0) scale(1)}to{transform:translateY(-70px) scale(1.14)}}
+@keyframes m-hero-word{from{transform:translate(-50%,-50%)}to{transform:translate(-50%,calc(-50% + 90px))}}
+@keyframes m-marq-l{from{transform:translateX(4%)}to{transform:translateX(-42%)}}
+@keyframes m-marq-r{from{transform:translateX(-42%)}to{transform:translateX(4%)}}
+@keyframes m-settle{from{opacity:.3;transform:translateY(36px) scale(.96)}to{opacity:1;transform:none}}
+@media (max-width:980px){
+  .hero-art{background-image:url('https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_860,h_1200,al_c,q_80/lift-dumbbells-m.jpg')}
+}
+
+@media (max-width:980px) and (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: scroll()){
+    /* scroll progress bar */
+    .progress{display:block;animation:m-grow linear both;animation-timeline:scroll(root)}
+
+    /* hero depth scrub over the first ~two screens */
+    .hero-art{animation:m-hero-art linear both;animation-timeline:scroll(root);animation-range:0px 1200px}
+    .hero-word{animation:m-hero-word linear both;animation-timeline:scroll(root);animation-range:0px 1200px}
+
+    /* marquee brand words slide as they cross the viewport */
+    .marq{display:block}
+    .marq span::before{content:attr(data-text) / ""}
+    .marq span{
+      display:inline-block;white-space:nowrap;
+      font-family:var(--heading);text-transform:uppercase;line-height:1;
+      font-size:clamp(70px,16vw,120px);
+      color:transparent;-webkit-text-stroke:1.5px rgba(46,48,54,.18);
+      animation:m-marq-l linear both;animation-timeline:view();
+    }
+    .marq span[data-mdir="1"]{animation-name:m-marq-r}
+    .marq .solid{color:var(--red);-webkit-text-stroke:0}
+
+    /* photos settle into place as they enter */
+    .feat-img img,.coach img,.visit figure img{
+      animation:m-settle linear both;animation-timeline:view();animation-range:entry 0% entry 90%;
+    }
+
+    /* carousel progress bar scrubbed by horizontal swipe */
+    .scene-gal{timeline-scope:--gal}
+    .gal-track{scroll-timeline:--gal x}
+    .gal-progress{display:block;height:3px;background:rgba(243,241,236,.15);margin:16px 24px 0}
+    .gal-progress i{
+      display:block;height:100%;background:var(--red);transform-origin:0 50%;
+      animation:m-grow linear both;animation-timeline:--gal;
+    }
+  }
+}
+
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -462,10 +634,11 @@ footer.site a{color:var(--cream);text-decoration:none}
 </head>
 <body>
 
+<div class="progress" aria-hidden="true"></div>
+
 <header class="site">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Lift STL home">
-      <!-- Official LIFT STL mark, lifted from the live site (inline SVG, brand red #E14747) -->
       <svg viewBox="0 0 600 600" role="img" aria-label="Lift STL logo" xmlns="http://www.w3.org/2000/svg">
         <g>
           <path fill="#E14747" d="M159.173 368.758h56.055l46.523-206.965h-56.054l-46.524 206.965Z"/>
@@ -486,9 +659,11 @@ footer.site a{color:var(--cream);text-decoration:none}
 
 <main id="top">
 
-  <!-- ============ HERO + ABOVE-THE-FOLD LEAD FORM ============ -->
-  <section class="hero">
-    <div class="wrap">
+  <!-- ============ HERO (cinematic) ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-art" aria-hidden="true"></div>
+    <div class="hero-word" aria-hidden="true">Lift</div>
+    <div class="wrap hero-exit">
       <div>
         <p class="kicker">Private personal training gym · Brentwood, MO</p>
         <h1>St.&nbsp;Louis personal training that gets <span class="accent">results.</span></h1>
@@ -500,7 +675,7 @@ footer.site a{color:var(--cream);text-decoration:none}
         </ul>
       </div>
 
-      <div class="lead-card">
+      <div class="lead-card" id="lead-card">
         <h2>Get your free day pass <span class="accent">&amp; tour</span></h2>
         <p class="fine">No commitment, no sales pitch. Come see the gym, meet a trainer, get a workout in.</p>
         <form class="lead-form" data-form-location="hero" novalidate>
@@ -538,6 +713,7 @@ footer.site a{color:var(--cream);text-decoration:none}
         </form>
       </div>
     </div>
+    <div class="scroll-cue" aria-hidden="true">Scroll</div>
   </section>
 
   <!-- ============ CREDIBILITY STRIP ============ -->
@@ -566,22 +742,25 @@ footer.site a{color:var(--cream);text-decoration:none}
     </div>
   </section>
 
-  <!-- ============ HOW IT WORKS ============ -->
+  <!-- ============ HOW IT WORKS — PINNED SCENE ============ -->
   <section class="steps wm" data-watermark="The Plan">
     <div class="wrap">
       <p class="kicker reveal">No surprises, no pressure</p>
       <h2 class="reveal">How it <span class="accent">works.</span></h2>
       <p class="reveal" style="max-width:42em">The entire process — every step, every price — before you ever walk in. Built for busy professionals, first-timers, and athletes alike.</p>
-      <div class="steps-grid">
+    </div>
+
+    <div class="wrap">
+      <div class="step-panels">
         <div class="step free reveal">
-          <span class="price-tag"><b>Free</b> · day passes normally $25</span>
+          <span class="price-tag"><b>Free</b> &middot; day passes normally $25</span>
           <h3>Tour + Day Pass</h3>
           <p>Come see the facility, meet the team, and train for a day on us. If it's not the right fit, no hard feelings.</p>
         </div>
         <div class="step reveal">
-          <span class="price-tag"><b>$100</b> · one-time</span>
+          <span class="price-tag"><b>$100</b> &middot; one-time</span>
           <h3>Custom Evaluation</h3>
-          <p>We start with a custom evaluation of you — goals, movement, body composition — and build your personal plan from it.</p>
+          <p>We start with a custom evaluation of you &mdash; goals, movement, body composition &mdash; and build your personal plan from it.</p>
         </div>
         <div class="step reveal">
           <span class="price-tag"><b>From $85</b> / session</span>
@@ -589,7 +768,6 @@ footer.site a{color:var(--cream);text-decoration:none}
           <p>One-on-one sessions with your trainer, regular re-evaluations, and bi-weekly body-fat testing to prove it's working.</p>
         </div>
       </div>
-
       <div class="eval-grid reveal" aria-label="What the evaluation covers">
         <div><b><i>A</i>History &amp; goals</b><span>Where you've been and where you actually want to go — it sets the framework for every test that follows.</span></div>
         <div><b><i>B</i>InBody 570 scan</b><span>Body composition beyond the scale — fat, muscle, and total body water. Non-invasive, fast, re-tested bi-weekly.</span></div>
@@ -605,10 +783,10 @@ footer.site a{color:var(--cream);text-decoration:none}
   <!-- ============ STATS BAND ============ -->
   <div class="stats">
     <div class="wrap">
-      <div class="stat reveal"><b>10+</b><span>Years coaching pro athletes</span></div>
+      <div class="stat reveal"><b data-countup="10" data-suffix="+">10+</b><span>Years coaching pro athletes</span></div>
       <div class="stat reveal"><b>24/7</b><span>Keycard access for members</span></div>
       <div class="stat reveal"><b>$0</b><span>Your first day — free pass &amp; tour</span></div>
-      <div class="stat reveal"><b>100%</b><span>Pricing published up front</span></div>
+      <div class="stat reveal"><b data-countup="100" data-suffix="%">100%</b><span>Pricing published up front</span></div>
     </div>
   </div>
 
@@ -665,6 +843,15 @@ footer.site a{color:var(--cream);text-decoration:none}
     </div>
   </section>
 
+  <!-- ============ BAND 1 ============ -->
+  <section class="band">
+    <div class="band-img" data-plx="-0.16" aria-hidden="true" style="background-image:url('https://static.wixstatic.com/media/47b482_16703b7b7f21486cac0680f696219abe~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_80/lift-band-1.jpg')"></div>
+    <div class="wrap">
+      <h2 class="reveal">Every rep has a <span class="accent">reason.</span></h2>
+      <p class="reveal">Nothing random, nothing wasted — your program exists because your evaluation said it should.</p>
+    </div>
+  </section>
+
   <!-- ============ WHAT YOU GET (dark) ============ -->
   <section class="dark wm" data-watermark="Focus">
     <div class="wrap cols">
@@ -679,7 +866,7 @@ footer.site a{color:var(--cream);text-decoration:none}
           <li class="reveal"><b>Top-tier equipment</b><span>A private, fully equipped gym — no waiting on racks.</span></li>
         </ul>
       </div>
-      <figure class="reveal">
+      <figure class="reveal feat-img" data-plx="0.06">
         <img src="https://static.wixstatic.com/media/9fd553_a2dc7c20eb7e43b3b497b61afab38850~mv2.jpg/v1/fill/w_900,h_1100,al_c,q_80/lift-training.jpg" alt="Lift member back-squatting with a coach on the red turf at the Brentwood gym" loading="lazy" width="900" height="1100">
       </figure>
     </div>
@@ -712,8 +899,11 @@ footer.site a{color:var(--cream);text-decoration:none}
     </div>
   </section>
 
+  <!-- ============ MARQUEE 2 (motion only) ============ -->
+  <div class="marq" style="background:var(--charcoal)" aria-hidden="true"><span data-mdir="1" data-text="Every effort is rewarded · Every effort is rewarded ·" style="-webkit-text-stroke-color:rgba(243,241,236,.16)"></span></div>
+
   <!-- ============ PROOF (dark) ============ -->
-  <section class="dark wm" data-watermark="Proof">
+  <section class="dark wm" data-watermark="Proof" style="padding-bottom:0">
     <div class="wrap">
       <div class="coach">
         <img class="reveal" src="https://static.wixstatic.com/media/48c380_881fb9504fe1462985d6bf7a5f7f5a86~mv2.jpg/v1/fill/w_800,h_900,al_c,q_80/eric-humes-family.jpg" alt="Eric Humes with his family on the red turf at Lift STL" loading="lazy" width="800" height="900">
@@ -730,6 +920,19 @@ footer.site a{color:var(--cream);text-decoration:none}
         </div>
       </div>
 
+      <!-- drag-to-compare: halves of the member composite already
+           published on lift-stl.com, split via Wix CDN crop transforms -->
+      <div class="reveal" style="margin-bottom:60px">
+        <p class="kicker center">Drag to compare</p>
+        <div class="ba-slider" style="--cut:50%">
+          <img class="ba-before" src="https://static.wixstatic.com/media/9fd553_15f0b4df54554f19becc7beaf51d32a9~mv2.png/v1/crop/x_0,y_0,w_2250,h_4500/v1/fill/w_700,h_1400,al_c,q_80/before.jpg" alt="Lift member before training" loading="lazy" width="700" height="1400">
+          <img class="ba-after" src="https://static.wixstatic.com/media/9fd553_15f0b4df54554f19becc7beaf51d32a9~mv2.png/v1/crop/x_2250,y_0,w_2250,h_4500/v1/fill/w_700,h_1400,al_c,q_80/after.jpg" alt="Lift member after training" loading="lazy" width="700" height="1400">
+          <div class="ba-divider" aria-hidden="true"></div>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </div>
+        <p class="ba-cap">Lift member — same person, one program</p>
+      </div>
+
       <div class="quotes">
         <blockquote class="reveal">
           <p>“What I like most about Eric is how specific he is with his approach. He customized a workout to help fix my imbalances which helped my performance.”</p>
@@ -744,35 +947,42 @@ footer.site a{color:var(--cream);text-decoration:none}
           <footer>— J. Glasgow, Lift member at 50<span class="result-line">−13.4 lbs · −6.9% body fat · +2.1 lbs muscle</span></footer>
         </blockquote>
       </div>
+    </div>
 
-      <h3 class="center reveal">Every effort is <span class="accent">rewarded.</span></h3>
-      <!-- Real member transformations already published on lift-stl.com.
-           To add more, duplicate a <figure> and swap the image + name. -->
-      <div class="ba-grid">
-        <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/9fd553_15f0b4df54554f19becc7beaf51d32a9~mv2.png/v1/fill/w_600,h_450,al_c,q_80/lift-member.jpg" alt="Lift member's before and after transformation" loading="lazy" width="600" height="450">
-          <figcaption>Lift member</figcaption>
-        </figure>
-        <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/9fd553_3ef4ce4b002b4d7fb7ea37618530c35d~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80/one-year.jpg" alt="Lift member's one-year before and after transformation" loading="lazy" width="600" height="450">
-          <figcaption>One year of progress</figcaption>
-        </figure>
-        <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/9fd553_c1f02465116946079b1fa3f4cc9e8f34~mv2.png/v1/fill/w_600,h_450,al_c,q_80/j-glasgow.jpg" alt="J. Glasgow's before and after at age 50" loading="lazy" width="600" height="450">
-          <figcaption>J. Glasgow — at 50</figcaption>
-        </figure>
-        <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/48c380_ebc540868343429695e5716568bcec2f~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80/rhett.jpg" alt="Rhett Mueller before and after training at Lift STL" loading="lazy" width="600" height="450">
-          <figcaption>Rhett Mueller</figcaption>
-        </figure>
-        <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/48c380_d98ca07f7496488d9b807ca378ef4ccf~mv2.png/v1/fill/w_600,h_450,al_c,q_80/seth.jpg" alt="Seth Buhman before and after training at Lift STL" loading="lazy" width="600" height="450">
-          <figcaption>Seth Buhman</figcaption>
-        </figure>
-        <figure class="reveal">
-          <img src="https://static.wixstatic.com/media/48c380_c93f19c535324760b09ad74270ff59c2~mv2.png/v1/fill/w_600,h_450,al_c,q_80/aakarsh.jpg" alt="Aakarsh before and after training at Lift STL" loading="lazy" width="600" height="450">
-          <figcaption>Aakarsh</figcaption>
-        </figure>
+    <!-- ---- horizontal transformation gallery (pins in motion mode) ---- -->
+    <div class="scene scene-gal" id="scene-gal" style="background:var(--charcoal)">
+      <div class="scene-sticky">
+        <div class="gal-head wrap">
+          <h3 class="center" style="color:var(--cream)">Every effort is <span class="accent">rewarded.</span></h3>
+        </div>
+        <!-- Real member transformations already published on lift-stl.com. -->
+        <div class="gal-track">
+          <figure class="reveal">
+            <img src="https://static.wixstatic.com/media/9fd553_15f0b4df54554f19becc7beaf51d32a9~mv2.png/v1/fill/w_600,h_450,al_c,q_80/lift-member.jpg" alt="Lift member's before and after transformation" loading="lazy" width="600" height="450">
+            <figcaption>Lift member</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="https://static.wixstatic.com/media/9fd553_3ef4ce4b002b4d7fb7ea37618530c35d~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80/one-year.jpg" alt="Lift member's one-year before and after transformation" loading="lazy" width="600" height="450">
+            <figcaption>One year of progress</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="https://static.wixstatic.com/media/9fd553_c1f02465116946079b1fa3f4cc9e8f34~mv2.png/v1/fill/w_600,h_450,al_c,q_80/j-glasgow.jpg" alt="J. Glasgow's before and after at age 50" loading="lazy" width="600" height="450">
+            <figcaption>J. Glasgow — at 50</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="https://static.wixstatic.com/media/48c380_ebc540868343429695e5716568bcec2f~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80/rhett.jpg" alt="Rhett Mueller before and after training at Lift STL" loading="lazy" width="600" height="450">
+            <figcaption>Rhett Mueller</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="https://static.wixstatic.com/media/48c380_d98ca07f7496488d9b807ca378ef4ccf~mv2.png/v1/fill/w_600,h_450,al_c,q_80/seth.jpg" alt="Seth Buhman before and after training at Lift STL" loading="lazy" width="600" height="450">
+            <figcaption>Seth Buhman</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="https://static.wixstatic.com/media/48c380_c93f19c535324760b09ad74270ff59c2~mv2.png/v1/fill/w_600,h_450,al_c,q_80/aakarsh.jpg" alt="Aakarsh before and after training at Lift STL" loading="lazy" width="600" height="450">
+            <figcaption>Aakarsh</figcaption>
+          </figure>
+        </div>
+        <div class="gal-progress" aria-hidden="true"><i></i></div>
       </div>
     </div>
   </section>
@@ -806,6 +1016,16 @@ footer.site a{color:var(--cream);text-decoration:none}
       <p class="center" style="margin-top:40px">
         <a class="btn btn-dark" href="#bottom-form" data-cta>Get My Free Day Pass &amp; Tour</a>
       </p>
+    </div>
+  </section>
+
+  <!-- ============ BAND 2 ============ -->
+  <section class="band">
+    <div class="band-img" data-plx="-0.16" aria-hidden="true" style="background-image:url('https://static.wixstatic.com/media/47b482_1ee9cd80ddcc4316b76ded73a305b9c5f000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/lift-band-2.jpg')"></div>
+    <div class="wrap">
+      <h2 class="reveal">Ready when you <span class="accent">are.</span></h2>
+      <p class="reveal">The turf's down here waiting. Day passes are free for first-time visitors.</p>
+      <p class="reveal" style="margin-top:28px"><a class="btn btn-solid" href="#bottom-form" data-cta>Get My Free Day Pass &amp; Tour</a></p>
     </div>
   </section>
 
@@ -902,23 +1122,10 @@ footer.site a{color:var(--cream);text-decoration:none}
 
 <script>
 /* ================================================================
-   CONFIG — fill these in before launch (both are flagged in the
-   README as launch blockers):
+   CONFIG — fill these in before launch (flagged in the README):
    ================================================================ */
 var CONFIG = {
-  /* Lead form endpoint. Expects a JSON POST:
-       { name, email, phone, source, page }
-     Options (pick one and confirm with the owner):
-       - Wix Velo HTTP function on the main site, e.g.
-         'https://www.lift-stl.com/_functions/leads'
-       - A Zapier/Make webhook that forwards to their CRM/email
-     Until this is set, submissions are stored nowhere — the page
-     shows the success state but logs a loud console error.       */
   FORM_ENDPOINT: 'REPLACE_WITH_FORM_ENDPOINT',
-
-  /* Google Ads conversion actions — TWO separate actions so calls
-     and form leads can be valued/optimized independently.
-     Format: 'AW-XXXXXXXXX/ConversionLabel'                        */
   ADS_CONVERSION_FORM_SUBMIT: 'AW-XXXXXXXXX/REPLACE_FORM_SUBMIT_LABEL',
   ADS_CONVERSION_PHONE_CALL: 'AW-XXXXXXXXX/REPLACE_PHONE_CALL_LABEL'
 };
@@ -931,19 +1138,18 @@ function fireConversion(sendTo, params) {
   }
 }
 
-/* Click IDs + UTM params captured at landing, forwarded with every
-   lead so the CRM can do offline conversion imports per campaign. */
+/* Click IDs + UTM params captured at landing, forwarded with every lead. */
 var ATTRIBUTION = (function () {
-  var params = new URLSearchParams(location.search);
   var out = {};
+  try { out = JSON.parse(sessionStorage.getItem('lift_attr') || '{}'); } catch (e) {}
+  var params = new URLSearchParams(location.search);
   ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
     .forEach(function (k) { var v = params.get(k); if (v) out[k] = v; });
+  try { sessionStorage.setItem('lift_attr', JSON.stringify(out)); } catch (e) {}
   return out;
 })();
 
-/* ---- Conversion action #1: tel: taps ----
-   Mobile (coarse pointer) only — desktop clicks on a phone number
-   rarely place a call and would inflate the conversion count. */
+/* ---- Conversion action #1: tel: taps (mobile only) ---- */
 document.addEventListener('click', function (e) {
   var link = e.target.closest && e.target.closest('a[href^="tel:"]');
   if (link && window.matchMedia('(pointer: coarse)').matches) {
@@ -951,18 +1157,7 @@ document.addEventListener('click', function (e) {
   }
 });
 
-/* ---- cinematic play button: reveal native controls on first play ---- */
-document.querySelectorAll('.video-shell').forEach(function (shell) {
-  var btn = shell.querySelector('.play-btn');
-  var vid = shell.querySelector('video');
-  btn.addEventListener('click', function () {
-    shell.classList.add('playing');
-    vid.setAttribute('controls', '');
-    vid.play();
-  });
-});
-
-/* ---- Optional engagement event (not a conversion): explainer plays ---- */
+/* ---- Optional engagement event: explainer plays ---- */
 document.querySelectorAll('.explainer video').forEach(function (v) {
   v.addEventListener('play', function () {
     if (typeof window.gtag === 'function') {
@@ -981,7 +1176,6 @@ document.querySelectorAll('form.lead-form').forEach(function (form) {
     var errorEl = form.querySelector('.form-error');
     errorEl.style.display = 'none';
 
-    /* Honeypot: bots fill the hidden field — show success, send nothing. */
     if (form.elements.website && form.elements.website.value) {
       form.classList.add('is-done');
       return;
@@ -1032,6 +1226,165 @@ document.querySelectorAll('form.lead-form').forEach(function (form) {
   });
 });
 
+/* ================================================================
+   SCROLLYTELLING ENGINE — transform/opacity only, one rAF per
+   scroll frame, offscreen culling. Activates only on fine-pointer,
+   no-reduced-motion, >980px viewports (body.motion).
+   ================================================================ */
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var touch = window.matchMedia('(pointer: coarse)').matches;
+  var small = window.innerWidth <= 980;
+  if (reduced || touch || small) return;
+  document.body.classList.add('motion');
+
+  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
+  var ease = function (p) { return 1 - Math.pow(1 - p, 3); };
+
+  var hero = document.getElementById('hero');
+  var heroArt = hero.querySelector('.hero-art');
+  var heroWord = hero.querySelector('.hero-word');
+  var heroExit = hero.querySelector('.hero-exit');
+  var bar = document.querySelector('.progress');
+  var bands = Array.prototype.slice.call(document.querySelectorAll('.band'));
+  var marks = Array.prototype.slice.call(document.querySelectorAll('.wm'));
+  var marqs = Array.prototype.slice.call(document.querySelectorAll('.marq span'));
+  var featImg = document.querySelector('.feat-img');
+
+  /* pinned horizontal gallery */
+  var sceneGal = document.getElementById('scene-gal');
+  var galTrack = sceneGal.querySelector('.gal-track');
+
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight;
+    var vw = window.innerWidth;
+    var sy = window.scrollY || document.documentElement.scrollTop;
+
+    /* hero: art drifts + zooms, word counter-drifts, content exits */
+    var hp = clamp(sy / (hero.offsetHeight * 0.85), 0, 1);
+    if (hp < 1.01) {
+      heroArt.style.setProperty('--ty', (sy * 0.28).toFixed(1) + 'px');
+      heroArt.style.setProperty('--sc', (1 + hp * 0.12).toFixed(3));
+      heroWord.style.setProperty('--ty', (sy * -0.18).toFixed(1) + 'px');
+      heroExit.style.setProperty('--ty', (sy * -0.12).toFixed(1) + 'px');
+      heroExit.style.setProperty('--op', clamp(1 - hp * 1.15, 0, 1).toFixed(3));
+    }
+
+    /* pinned gallery: vertical scroll → horizontal glide */
+    var g = sceneGal.getBoundingClientRect();
+    if (g.bottom > 0 && g.top < vh) {
+      var gp = clamp(-g.top / (g.height - vh), 0, 1);
+      var span = galTrack.scrollWidth - vw;
+      galTrack.style.setProperty('--tx', (-span * ease(gp)).toFixed(1) + 'px');
+    }
+
+    /* window bands: image counter-drift + text settle */
+    bands.forEach(function (b) {
+      var br = b.getBoundingClientRect();
+      if (br.bottom < -vh || br.top > vh * 2) return;
+      var mid = br.top + br.height / 2 - vh / 2;
+      b.querySelector('.band-img').style.setProperty('--ty', (-mid * -0.16).toFixed(1) + 'px');
+      var vis = clamp(1 - Math.abs(mid) / (vh * 0.9), 0, 1);
+      var w = b.querySelector('.wrap');
+      w.style.setProperty('--sc', (0.92 + vis * 0.08).toFixed(3));
+      w.style.setProperty('--op', (0.25 + vis * 0.75).toFixed(3));
+    });
+
+    /* watermarks counter-drift */
+    marks.forEach(function (s) {
+      var sr = s.getBoundingClientRect();
+      if (sr.bottom < 0 || sr.top > vh) return;
+      s.style.setProperty('--plxY', (sr.top * 0.14).toFixed(1) + 'px');
+    });
+
+    /* marquee words slide with scroll */
+    marqs.forEach(function (m) {
+      var mr = m.parentElement.getBoundingClientRect();
+      if (mr.bottom < 0 || mr.top > vh) return;
+      var dir = parseFloat(m.dataset.mdir || '1');
+      m.style.setProperty('--tx', ((vh - mr.top) * 0.32 * dir - (dir > 0 ? m.scrollWidth - vw : 0)).toFixed(1) + 'px');
+    });
+
+    /* squat photo gentle drift */
+    if (featImg) {
+      var fr = featImg.parentElement.getBoundingClientRect();
+      if (fr.bottom > 0 && fr.top < vh) {
+        var fmid = fr.top + fr.height / 2 - vh / 2;
+        featImg.style.setProperty('--ty', (-fmid * 0.06).toFixed(1) + 'px');
+      }
+    }
+
+    /* progress bar */
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - vh;
+    bar.style.transform = 'scaleX(' + (max > 0 ? sy / max : 0).toFixed(4) + ')';
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+
+  /* lead-card tilt — micro, and never while the user is typing */
+  var card = document.getElementById('lead-card');
+  card.addEventListener('mousemove', function (e) {
+    if (card.matches(':focus-within')) return;
+    var cr = card.getBoundingClientRect();
+    card.style.setProperty('--ry', (((e.clientX - cr.left) / cr.width - 0.5) * 4).toFixed(2) + 'deg');
+    card.style.setProperty('--rx', (((e.clientY - cr.top) / cr.height - 0.5) * -4).toFixed(2) + 'deg');
+  });
+  card.addEventListener('mouseleave', function () {
+    card.style.setProperty('--rx', '0deg');
+    card.style.setProperty('--ry', '0deg');
+  });
+})();
+
+/* ---- cinematic play button: reveal native controls on first play ---- */
+document.querySelectorAll('.video-shell').forEach(function (shell) {
+  var btn = shell.querySelector('.play-btn');
+  var vid = shell.querySelector('video');
+  btn.addEventListener('click', function () {
+    shell.classList.add('playing');
+    vid.setAttribute('controls', '');
+    vid.play();
+  });
+});
+
+/* ---- count-up stats — all devices except reduced motion ---- */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var easeOut = function (p) { return 1 - Math.pow(1 - p, 3); };
+  var cio = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      cio.unobserve(entry.target);
+      var el = entry.target, target = parseInt(el.dataset.countup, 10),
+          suffix = el.dataset.suffix || '', t0 = null;
+      function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min((t - t0) / 900, 1);
+        el.textContent = Math.round(target * easeOut(p)) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-countup]').forEach(function (el) { cio.observe(el); });
+})();
+
+/* ---- before/after drag slider — all devices ---- */
+document.querySelectorAll('.ba-slider').forEach(function (slider) {
+  slider.querySelector('.ba-range').addEventListener('input', function () {
+    slider.style.setProperty('--cut', this.value + '%');
+  });
+});
+
 /* ---- Scroll-reveal — skipped entirely under reduced motion ---- */
 (function () {
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1046,8 +1399,6 @@ document.querySelectorAll('form.lead-form').forEach(function (form) {
     });
   }, { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-  /* Failsafe: never leave content hidden for non-scrolling renderers
-     (ad-quality crawlers, screenshot bots, stalled IO). */
   setTimeout(function () {
     document.querySelectorAll('.reveal:not(.in)').forEach(function (el) { el.classList.add('in'); });
   }, 3000);

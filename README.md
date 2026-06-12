@@ -1,53 +1,47 @@
 # Lift STL — Google Ads Landing Page (Personal Training)
 
 A conversion-optimized landing page for "personal trainer St. Louis" paid
-traffic. **Deliverable: standalone HTML** (`index.html`, single
-self-contained file) — fastest to load for Quality Score, hostable on any
-static host or a subdomain (e.g. `go.lift-stl.com`), and independent of the
-Wix editor. It can also be attached to the Wix site via Wix's custom-domain
-subdomain routing or an embed if preferred.
+traffic. **One file: `index.html`** — standalone HTML, no build step,
+hostable on any static host or a subdomain (e.g. `go.lift-stl.com`).
 
-**`parallax.html`** is a scrollytelling A/B variant of the same page —
-identical content, offer, forms, and tracking — with scroll-driven scenes:
+The single page adapts to the device:
 
-- **Cinematic hero**: full-viewport, three depth layers (drifting/zooming
-  dumbbell art, counter-drifting giant outlined Rift "LIFT", content that
-  rises and dissolves as you scroll away), plus a micro tilt on the lead
-  card (disabled while typing).
-- **Horizontal transformation gallery**: vertical scroll glides the six
-  before/afters sideways through a pinned viewport.
-- **Marquee brand line** ("EVERY EFFORT IS REWARDED") slides across before
-  the proof section; window-effect image bands; count-up stats; red
-  scroll-progress bar.
+- **Desktop (>980px, fine pointer)**: a scroll-driven film — layered hero
+  (zooming dumbbell art + outlined Rift "LIFT" + dissolving content), the
+  six transformations gliding horizontally through a pinned viewport,
+  window-effect image bands, a scroll-tied marquee, count-up stats, lead
+  card micro-tilt, and a scroll progress bar. Transform/opacity only, one
+  rAF per scroll frame, offscreen culling; `overflow-x:clip` keeps wide
+  layers contained without breaking `position:sticky`.
+- **Mobile (≤980px)**: CSS scroll-driven animations
+  (`animation-timeline: scroll()/view()`) that run on the compositor and
+  stay smooth during touch flings — hero depth scrub, marquee, photo
+  settle-ins, progress bar, and a swipeable snap carousel with a
+  swipe-scrubbed progress bar. Requires Chrome/Edge 115+ or Safari 26+;
+  older engines get the static page.
+- **Everywhere**: the cinematic "Watch" section (the gym's own 60-second
+  evaluation explainer behind an oversized play button), the
+  drag-to-compare before/after slider (Wix CDN crop transforms split the
+  published composite into halves; an accessible `<input type=range>`
+  drives the wipe), and full `prefers-reduced-motion` support.
 
-Both variants open with a dedicated **"Watch" section** right after the
-credibility strip: the site's 60-second evaluation explainer in a cinematic
-dark block with an oversized play button (native controls appear on first
-play; the `video_play` engagement event still fires).
+## Quality (Lighthouse, mobile emulation, June 2026)
 
-All desktop motion is transform/opacity-only (one rAF per scroll frame,
-offscreen culling). `overflow-x:clip` (not `hidden`) keeps the wide layers
-contained without breaking `position:sticky`.
+Performance **95** · Accessibility **100** · Best Practices **100** ·
+SEO **100** — CLS 0, zero console errors, WCAG AA contrast throughout
+(small red text uses the brand deep red `#8F3C3C`; the credibility strip
+and call bar sit on deep red so cream text passes 4.5:1).
 
-**Mobile (≤980px) gets its own native motion experience** built on CSS
-scroll-driven animations (`animation-timeline: scroll()/view()`), which run
-on the compositor thread and stay smooth during touch flings — something JS
-scroll handlers physically can't do on iOS. Behind
-`@supports (animation-timeline: scroll())` + `prefers-reduced-motion:
-no-preference` (Chrome/Edge 115+, Safari 26+; older engines get the static
-page):
+## Testing
 
-- Hero depth scrub (art zoom/drift + outlined LIFT word) over the first
-  two screens
-- Scroll-tied marquee brand line, photo settle-ins, scroll progress bar
-- Swipeable snap carousel for the six transformations with a
-  swipe-scrubbed progress bar (named `scroll-timeline` on the x axis)
+```
+npm install && npx playwright install chromium && npm test
+```
 
-**Drag-to-compare before/after slider** (all devices, in the proof
-section): the member composite already published on the site is split into
-before/after halves *server-side* via chained Wix CDN transforms
-(`/v1/crop/...:/v1/fill/...`), wiped with `clip-path` driven by an
-accessible `<input type=range>` — keyboard and screen-reader friendly.
+`test/smoke.mjs` serves the repo locally and verifies in headless
+Chromium (desktop + mobile emulation): clean load, motion gating, click-ID
+capture, phone validation, both form success paths, the honeypot, the
+compare slider, video playback, the call bar, and the carousel.
 
 ## Brand tokens — extracted from the live site (not invented)
 
