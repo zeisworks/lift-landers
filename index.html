@@ -62,8 +62,10 @@
       url('https://static.wixstatic.com/ufonts/2cec0a_c6acf09e4ba343babb5f0e0c71224cb8/woff/file.woff') format('woff');
   font-display:swap;
 }
-@font-face{
+@font-face{ /* Avenir LT Std 85 Heavy — registered as 700 so large
+     bold labels are judged at the 3:1 large-text threshold */
   font-family:'Avenir 85';
+  font-weight:700;
   src:url('https://static.wixstatic.com/ufonts/1c84a3_83aa59d0e76243d0955b5e8a09ecc730/woff2/file.woff2') format('woff2'),
       url('https://static.wixstatic.com/ufonts/1c84a3_83aa59d0e76243d0955b5e8a09ecc730/woff/file.woff') format('woff');
   font-display:swap;
@@ -120,7 +122,7 @@ img{max-width:100%;display:block}
 
 .btn{
   display:inline-block;
-  font:normal 16px/1.4 var(--heavy);
+  font:700 19px/1.3 var(--heavy);
   letter-spacing:.02em;
   text-decoration:none;
   text-align:center;
@@ -131,11 +133,11 @@ img{max-width:100%;display:block}
   transition:background-color .4s ease,border-color .4s ease,color .4s ease;
 }
 .btn-dark{background:var(--charcoal);color:var(--cream)}
-.btn-dark:hover{background:var(--red-deep);border-color:var(--red-deep);color:var(--cream)}
-.btn-solid{background:var(--red-deep);border-color:var(--red-deep);color:var(--cream)}
+.btn-dark:hover{background:var(--red);border-color:var(--red);color:var(--cream)}
+.btn-solid{background:var(--red);border-color:var(--red);color:var(--cream)}
 .btn-solid:hover{background:var(--charcoal);border-color:var(--charcoal);color:var(--cream)}
 .btn-block{display:block;width:100%}
-.btn-sm{padding:10px 24px;font-size:14px}
+.btn-sm{padding:8px 22px;font-size:19px}
 
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 section{padding:84px 0;position:relative}
@@ -152,7 +154,7 @@ section{padding:84px 0;position:relative}
 .dark.wm::before{color:rgba(243,241,236,.045)}
 
 /* 19px bold = WCAG large text, so brand red passes 3:1 on both grounds */
-.kicker{font:normal 19px/1.3 var(--heavy);letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
+.kicker{font:700 19px/1.3 var(--heavy);letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
 .center{text-align:center}
 
 .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
@@ -182,7 +184,7 @@ body.motion .hero{min-height:100svh;display:flex;align-items:center;padding:40px
   background:url('https://static.wixstatic.com/media/f7d5f7_7bd2c7de8a494c4c9c19ad09a391eaadf000.jpg/v1/fill/w_1920,h_1080,al_c,q_80/lift-dumbbells.jpg') center/cover no-repeat;
   transform:translate3d(0,var(--ty,0px),0) scale(var(--sc,1));
 }
-.hero-art::after{content:"";position:absolute;inset:0;background:rgba(46,48,54,.88);mix-blend-mode:multiply}
+.hero-art::after{content:"";position:absolute;inset:0;background:rgba(46,48,54,.84);mix-blend-mode:multiply}
 .hero-word{
   position:absolute;z-index:0;left:50%;top:46%;
   transform:translate(-50%,-50%) translateY(var(--ty,0px));
@@ -280,9 +282,9 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 }
 
 /* ---- credibility strip ---- */
-.strip{background:var(--red-deep);color:var(--cream);padding:22px 0;position:relative;z-index:2}
+.strip{background:var(--red);color:var(--cream);padding:22px 0;position:relative;z-index:2}
 .strip .wrap{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;align-items:baseline;text-align:center}
-.strip .strip-label{font:normal 19px/1.3 var(--heavy);letter-spacing:.12em;text-transform:uppercase}
+.strip .strip-label{font:700 19px/1.3 var(--heavy);letter-spacing:.12em;text-transform:uppercase}
 .strip .strip-names{font-family:var(--heading);font-size:clamp(20px,2.4vw,28px);text-transform:uppercase;letter-spacing:.03em}
 
 /* ---- marquee words (motion only) ---- */
@@ -463,10 +465,10 @@ body.motion .gal-track figure{width:clamp(360px,32vw,470px);flex:none;box-shadow
 .visit figure{margin:0}
 .visit figure img{width:100%;aspect-ratio:1;object-fit:cover;border-top:4px solid var(--red)}
 .hours{list-style:none;margin:20px 0;padding:0;font-size:15px}
-.hours li{display:flex;justify-content:space-between;max-width:22em;padding:7px 0;border-bottom:1px solid rgba(243,241,236,.12)}
+.hours li{display:flex;justify-content:space-between;max-width:22em;padding:7px 0;border-bottom:1px solid rgba(46,48,54,.12)}
 .hours li span:first-child{font-family:var(--heavy)}
 .visit address{font-style:normal;font-size:15px;line-height:1.7}
-.visit .map-link{color:var(--red);font-family:var(--heavy);text-decoration:none}
+.visit .map-link{color:var(--red-deep);font-family:var(--heavy);text-decoration:none}
 .visit .map-link:hover{text-decoration:underline}
 
 /* ---- footer ---- */
@@ -478,14 +480,14 @@ footer.site a{color:var(--cream);text-decoration:none}
 .call-bar{
   display:none;
   position:fixed;left:0;right:0;bottom:0;z-index:50;
-  background:var(--red-deep);
+  background:var(--red);
   padding:14px 16px calc(14px + env(safe-area-inset-bottom));
   text-align:center;
   box-shadow:0 -6px 24px rgba(0,0,0,.3);
 }
 .call-bar a{
   color:var(--cream);
-  font:normal 19px/1.3 var(--heavy);
+  font:700 19px/1.3 var(--heavy);
   text-decoration:none;letter-spacing:.02em;display:block;
 }
 @media (max-width:760px){
@@ -563,7 +565,7 @@ footer.site a{color:var(--cream);text-decoration:none}
     /* carousel progress bar scrubbed by horizontal swipe */
     .scene-gal{timeline-scope:--gal}
     .gal-track{scroll-timeline:--gal x}
-    .gal-progress{display:block;height:3px;background:rgba(243,241,236,.15);margin:16px 24px 0}
+    .gal-progress{display:block;height:3px;background:rgba(46,48,54,.15);margin:16px 24px 0}
     .gal-progress i{
       display:block;height:100%;background:var(--red);transform-origin:0 50%;
       animation:m-grow linear both;animation-timeline:--gal;
@@ -871,10 +873,10 @@ footer.site a{color:var(--cream);text-decoration:none}
   </section>
 
   <!-- ============ MARQUEE 2 (motion only) ============ -->
-  <div class="marq" style="background:var(--charcoal)" aria-hidden="true"><span data-mdir="1" data-text="Every effort is rewarded · Every effort is rewarded ·" style="-webkit-text-stroke-color:rgba(243,241,236,.16)"></span></div>
+  <div class="marq" aria-hidden="true"><span data-mdir="1" data-text="Every effort is rewarded · Every effort is rewarded ·"></span></div>
 
   <!-- ============ PROOF (dark) ============ -->
-  <section class="dark wm" data-watermark="Proof" style="padding-bottom:0">
+  <section class="wm" data-watermark="Proof" style="padding-bottom:0">
     <div class="wrap">
       <h2 class="center reveal" style="margin-bottom:28px">Hear it from <span class="accent">members.</span></h2>
 
@@ -895,10 +897,10 @@ footer.site a{color:var(--cream);text-decoration:none}
     </div>
 
     <!-- ---- horizontal transformation gallery (pins in motion mode) ---- -->
-    <div class="scene scene-gal" id="scene-gal" style="background:var(--charcoal)">
+    <div class="scene scene-gal" id="scene-gal">
       <div class="scene-sticky">
         <div class="gal-head wrap">
-          <h3 class="center" style="color:var(--cream)">Every effort is <span class="accent">rewarded.</span></h3>
+          <h3 class="center">Every effort is <span class="accent">rewarded.</span></h3>
         </div>
         <!-- Real member transformations already published on lift-stl.com. -->
         <div class="gal-track">
@@ -991,7 +993,7 @@ footer.site a{color:var(--cream);text-decoration:none}
   </section>
 
   <!-- ============ VISIT ============ -->
-  <section class="visit dark" style="border-top:1px solid rgba(243,241,236,.12)">
+  <section class="visit" style="border-top:1px solid rgba(46,48,54,.1)">
     <div class="wrap">
       <div>
         <h2 class="reveal">Come see it <span class="accent">first.</span></h2>
@@ -1012,7 +1014,7 @@ footer.site a{color:var(--cream);text-decoration:none}
           <li><span>Saturday</span><span>6 AM – 2 PM</span></li>
           <li><span>Sunday</span><span>8 AM – 2 PM</span></li>
         </ul>
-        <p class="reveal" style="color:var(--cream-soft);font-size:15px">Members get <strong style="color:var(--cream)">24/7 keycard access</strong> — train on your schedule, not ours.</p>
+        <p class="reveal" style="color:var(--ink-soft);font-size:15px">Members get <strong style="color:var(--charcoal)">24/7 keycard access</strong> — train on your schedule, not ours.</p>
       </div>
       <figure class="reveal">
         <img src="https://static.wixstatic.com/media/9fd553_c901c808ec864e518e91f59daf2f35ba~mv2.jpeg/v1/fill/w_700,h_700,al_c,q_80/lift-floor.jpg" alt="Overhead view of a member lifting on the LIFT STL logo platform" loading="lazy" width="700" height="700">
