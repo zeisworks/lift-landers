@@ -34,10 +34,9 @@ scroll handlers physically can't do on iOS. Behind
 no-preference` (Chrome/Edge 115+, Safari 26+; older engines get the static
 page):
 
-- Pinned three-act "How it works" scrub (sticky + `view-timeline`)
 - Hero depth scrub (art zoom/drift + outlined LIFT word) over the first
   two screens
-- Scroll-tied marquee brand words, photo settle-ins, scroll progress bar
+- Scroll-tied marquee brand line, photo settle-ins, scroll progress bar
 - Swipeable snap carousel for the six transformations with a
   swipe-scrubbed progress bar (named `scroll-timeline` on the x axis)
 

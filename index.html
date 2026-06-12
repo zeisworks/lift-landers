@@ -270,6 +270,34 @@ form.is-done .form-success{display:block}
 .explainer{margin:56px auto 0;max-width:880px}
 .explainer video{width:100%;height:auto;display:block;background:var(--charcoal);border-top:6px solid var(--red)}
 .explainer figcaption{font:normal 13px/1.5 var(--heavy);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);text-align:center;padding:12px 0 0}
+/* cinematic video shell with oversized play button */
+.watch .explainer{max-width:none;margin:0}
+.video-shell{position:relative;background:#000;border-top:6px solid var(--red);box-shadow:0 26px 70px rgba(0,0,0,.5)}
+.video-shell video{width:100%;height:auto;display:block}
+.play-btn{
+  position:absolute;inset:0;width:100%;height:100%;
+  background:rgba(46,48,54,.22);border:0;cursor:pointer;
+  transition:background .3s ease;
+}
+.play-btn::before{
+  content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:96px;height:96px;border-radius:50%;background:var(--red);
+  box-shadow:0 10px 34px rgba(0,0,0,.45);
+  transition:transform .3s ease;
+}
+.play-btn::after{
+  content:"";position:absolute;top:50%;left:50%;transform:translate(-38%,-50%);
+  border-style:solid;border-width:17px 0 17px 28px;
+  border-color:transparent transparent transparent var(--cream);
+}
+.play-btn:hover{background:rgba(46,48,54,.05)}
+.play-btn:hover::before{transform:translate(-50%,-50%) scale(1.08)}
+.video-shell.playing .play-btn{display:none}
+@media (max-width:760px){
+  .play-btn::before{width:72px;height:72px}
+  .play-btn::after{border-width:13px 0 13px 21px}
+}
+
 .eval-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(46,48,54,.12);max-width:880px;margin:34px auto 0}
 .eval-grid div{background:var(--cream);padding:20px 18px}
 .eval-grid b{font:normal 14px/1.4 var(--heavy);letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:6px}
@@ -520,6 +548,24 @@ footer.site a{color:var(--cream);text-decoration:none}
     </div>
   </div>
 
+  <!-- ============ WATCH (explainer video, front and center) ============ -->
+  <section class="watch dark wm" data-watermark="Watch">
+    <div class="wrap" style="max-width:1020px">
+      <p class="kicker center reveal">Watch &middot; 60 seconds</p>
+      <h2 class="center reveal">The best plan for <span class="accent">your</span> goals.</h2>
+      <figure class="explainer reveal" style="margin-top:36px">
+        <div class="video-shell">
+          <video preload="none" playsinline width="1280" height="720"
+            poster="https://static.wixstatic.com/media/47b482_1ee9cd80ddcc4316b76ded73a305b9c5f000.jpg/v1/fill/w_1280,h_720,al_c,q_80/evaluation-video-poster.jpg">
+            <source src="https://video.wixstatic.com/video/47b482_1ee9cd80ddcc4316b76ded73a305b9c5/720p/mp4/file.mp4" type="video/mp4">
+          </video>
+          <button class="play-btn" type="button" aria-label="Play video: how we find the best fitness plan for your goals"></button>
+        </div>
+        <figcaption style="color:var(--cream-soft)">How we find the best fitness plan for your goals &mdash; straight from the floor in Brentwood</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- ============ HOW IT WORKS ============ -->
   <section class="steps wm" data-watermark="The Plan">
     <div class="wrap">
@@ -544,15 +590,6 @@ footer.site a{color:var(--cream);text-decoration:none}
         </div>
       </div>
 
-      <!-- The site's own produced explainer (the video behind the current
-           PT page hero). preload="none" — nothing downloads until play. -->
-      <figure class="explainer reveal">
-        <video controls preload="none" playsinline width="1280" height="720"
-          poster="https://static.wixstatic.com/media/47b482_1ee9cd80ddcc4316b76ded73a305b9c5f000.jpg/v1/fill/w_1200,h_675,al_c,q_80/evaluation-video-poster.jpg">
-          <source src="https://video.wixstatic.com/video/47b482_1ee9cd80ddcc4316b76ded73a305b9c5/720p/mp4/file.mp4" type="video/mp4">
-        </video>
-        <figcaption>Watch: how we find the best fitness plan for your goals (60 sec)</figcaption>
-      </figure>
       <div class="eval-grid reveal" aria-label="What the evaluation covers">
         <div><b><i>A</i>History &amp; goals</b><span>Where you've been, where you actually want to go — it frames everything else.</span></div>
         <div><b><i>B</i>Movement screen</b><span>How you move under load, and the imbalances worth fixing first.</span></div>
@@ -912,6 +949,17 @@ document.addEventListener('click', function (e) {
   if (link && window.matchMedia('(pointer: coarse)').matches) {
     fireConversion(CONFIG.ADS_CONVERSION_PHONE_CALL);
   }
+});
+
+/* ---- cinematic play button: reveal native controls on first play ---- */
+document.querySelectorAll('.video-shell').forEach(function (shell) {
+  var btn = shell.querySelector('.play-btn');
+  var vid = shell.querySelector('video');
+  btn.addEventListener('click', function () {
+    shell.classList.add('playing');
+    vid.setAttribute('controls', '');
+    vid.play();
+  });
 });
 
 /* ---- Optional engagement event (not a conversion): explainer plays ---- */
