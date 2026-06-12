@@ -7,6 +7,14 @@ static host or a subdomain (e.g. `go.lift-stl.com`), and independent of the
 Wix editor. It can also be attached to the Wix site via Wix's custom-domain
 subdomain routing or an embed if preferred.
 
+**`parallax.html`** is an A/B variant of the same page — identical content,
+offer, forms, and tracking — adding a transform-only parallax layer: hero
+depth (drifting dumbbell art + giant outlined Rift "LIFT"), counter-drifting
+section watermarks, two full-bleed image window bands, count-up stats, and a
+red scroll-progress bar. All motion is compositor-friendly (one rAF per
+scroll frame, offscreen culling) and is **fully disabled on touch devices
+and under `prefers-reduced-motion`**, where it renders as the static page.
+
 ## Brand tokens — extracted from the live site (not invented)
 
 Pulled from the rendered Wix theme on `lift-stl.com/`,
