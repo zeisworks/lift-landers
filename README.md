@@ -14,13 +14,16 @@ identical content, offer, forms, and tracking — with scroll-driven scenes:
   dumbbell art, counter-drifting giant outlined Rift "LIFT", content that
   rises and dissolves as you scroll away), plus a micro tilt on the lead
   card (disabled while typing).
-- **Pinned "How it works"**: the section pins for three scroll-scrubbed
-  acts — giant outlined 01/02/03 numerals crossfade beside each step card.
 - **Horizontal transformation gallery**: vertical scroll glides the six
   before/afters sideways through a pinned viewport.
-- **Marquee brand words** ("RESULTS", "EVERY EFFORT IS REWARDED") slide
-  across between acts; window-effect image bands; count-up stats; red
+- **Marquee brand line** ("EVERY EFFORT IS REWARDED") slides across before
+  the proof section; window-effect image bands; count-up stats; red
   scroll-progress bar.
+
+Both variants open with a dedicated **"Watch" section** right after the
+credibility strip: the site's 60-second evaluation explainer in a cinematic
+dark block with an oversized play button (native controls appear on first
+play; the `video_play` engagement event still fires).
 
 All desktop motion is transform/opacity-only (one rAF per scroll frame,
 offscreen culling). `overflow-x:clip` (not `hidden`) keeps the wide layers
@@ -103,7 +106,7 @@ extracted: charcoal fill + red border + red text → fills red on hover.
   produced 60-second explainer ("How to find the best fitness plan for
   your goals") with burned-in captions, hosted at
   `video.wixstatic.com/video/47b482_1ee9cd80ddcc4316b76ded73a305b9c5/720p/mp4/file.mp4`
-  (480p also available). It's embedded click-to-play in the "How it works"
+  (480p also available). It's featured click-to-play in its own "Watch"
   section (its captions would clash with the H1 as a background loop), with
   `preload="none"` so it costs zero bytes until played. Its first frame is
   reused as the hero's static background image.
